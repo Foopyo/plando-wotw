@@ -1,0 +1,1110 @@
+// Format Version: 1.0.0
+
+// Doc
+// 9|151 Timer for ability choice 1
+// 9|152 Timer for ability choice 2
+// 9|153 Timer for ability choice 3
+// 9|154 Timer for ability choice 4
+// 9|155 Timer for goal mode
+// 9|100 control ability timers
+// 9|101 control goal mode timer
+// 9|0=1 grant one ability
+// 9|0=2 display the choices messagebox
+// 9|0=3 is a trigger for when you collect a pickup
+// 9|0=4 is a trigger for when you collect a wisp
+// 9|0=5 is a trigger for getting a new ability
+// 9|0=6 is a trigger for rerolling all your current abilities
+// 9|0=7 is a trigger for removing a skill
+// 9|0=8 is a trigger for rerolling your choices
+// 9|0=9 consume a reroll
+// 9|0=10 pull 4 abilities choices
+// 9|0=11 consume full reroll
+// 9|0=12 set Grom prices
+// 9|0=13 trigger for building the hint wheel
+// 9|0=14 display Opher's advice 1
+// 9|0=15 display Opher's spirit light
+// 9|0=16 display Opher's roll info 1
+// 9|0=17 display Opher's roll info 2
+// 9|0=18 display Opher's permanent skill
+// 9|0=19 display Opher's tree
+// 9|0=20 display Opher's Grom
+// 9|0=21 display Opher's Wisps
+// 9|0=22 display Opher's Willow
+// 9|0=23 adds binding 4 icons if you bought the upgrade
+// 9|110 tracks if you can choose a new ability
+// 9|111 tracks if you can choose between 4 abilities
+// 9|112 tracks if you have 4 abilities
+// 9|113 tracks if Grom discount is active
+// 9|114 tracks if player exited willow's last room
+// 9|114 also tracks if player exited willow's last room?
+// 9|120 tracks if you bought Opher's advice 1
+// 9|121 tracks if you bought Opher's SL
+// 9|122 tracks if you bought Opher's roll information 1
+// 9|123 tracks if you bought Opher's roll information 2
+// 9|124 tracks if you bought Opher's permanent skill information
+// 9|125 tracks if you bought Opher's tree information
+// 9|126 tracks if you bought Opher's Grom information
+// 9|127 tracks if you bought Opher's wisps information
+// 9|128 tracks if you bought Opher's willow information
+// 9|130 tracks if you bought permanent burrow
+// 9|131 tracks if you bought permanent regen
+// 9|1 store the ability you'll get by pressing Binding 1
+// 9|2 store the ability you'll get by pressing Binding 2
+// 9|3 store the ability you'll get by pressing Binding 3
+// 9|4 store the ability you'll get by pressing Binding 4
+// 9|9 store the ability you've chosen
+// 9|10 store the 4th ability slot if you bought the upgrade 
+// 9|11 store the newest ability you've collected
+// 9|12 store the second to last ability you've collected
+// 9|13 store the oldest ability you've collected
+// 9|14 store the ability which got removed
+// 9|15 value used to delete a skill
+// 9|20 number of pickups I care about (about everything except shops)
+// 9|21 number of wisps collected
+// 9|30 number of rerolls you have left
+// 9|31 number of full rerolls you have left
+// 9|50 store the number of abilities you still have to choose
+
+// Progress Message...
+//... Pickup count
+3|8|4|29|1|Pickups: $(9|20)/[total_pickup_count()]\n
+//... Construct Ability recap if you have 3 abilities
+3|8|4|17|9|112|0|4|30|1|Newest ability: 
+3|8|4|17|9|112|0|4|19|9|11|990|4|30|1|$[2|$(9|11)]\n
+3|8|4|17|9|112|0|4|17|9|11|990|4|30|1|Still in selection\n
+3|8|4|17|9|112|0|4|17|9|11|998|4|30|1|Ressources\n
+3|8|4|17|9|112|0|4|17|9|11|999|4|30|1|None\n
+3|8|4|17|9|112|0|4|30|1|2nd ability: 
+3|8|4|17|9|112|0|4|19|9|12|990|4|30|1|$[2|$(9|12)]\n
+3|8|4|17|9|112|0|4|17|9|12|990|4|30|1|Still in selection\n
+3|8|4|17|9|112|0|4|17|9|12|998|4|30|1|Ressources\n
+3|8|4|17|9|112|0|4|17|9|12|999|4|30|1|None\n
+3|8|4|17|9|112|0|4|30|1|Oldest ability: 
+3|8|4|17|9|112|0|4|19|9|13|990|4|30|1|$[2|$(9|13)]\n
+3|8|4|17|9|112|0|4|17|9|13|990|4|30|1|Still in selection\n
+3|8|4|17|9|112|0|4|17|9|13|998|4|30|1|Ressources\n
+3|8|4|17|9|112|0|4|17|9|13|999|4|30|1|None\n
+//... Construct Ability recap if you have 4 abilities
+3|8|4|17|9|112|1|4|30|1|Newest ability: 
+3|8|4|17|9|112|1|4|19|9|10|990|4|30|1|$[2|$(9|10)]\n
+3|8|4|17|9|112|1|4|17|9|10|990|4|30|1|Still in selection\n
+3|8|4|17|9|112|1|4|17|9|10|998|4|30|1|Ressources\n
+3|8|4|17|9|112|1|4|17|9|10|999|4|30|1|None\n
+3|8|4|17|9|112|1|4|30|1|2nd ability: 
+3|8|4|17|9|112|1|4|19|9|11|990|4|30|1|$[2|$(9|11)]\n
+3|8|4|17|9|112|1|4|17|9|11|990|4|30|1|Still in selection\n
+3|8|4|17|9|112|1|4|17|9|11|998|4|30|1|Ressources\n
+3|8|4|17|9|112|1|4|17|9|11|999|4|30|1|None\n
+3|8|4|17|9|112|1|4|30|1|3rd ability: 
+3|8|4|17|9|112|1|4|19|9|12|990|4|30|1|$[2|$(9|12)]\n
+3|8|4|17|9|112|1|4|17|9|12|990|4|30|1|Still in selection\n
+3|8|4|17|9|112|1|4|17|9|12|998|4|30|1|Ressources\n
+3|8|4|17|9|112|1|4|17|9|12|999|4|30|1|None\n
+3|8|4|17|9|112|1|4|30|1|Oldest ability: 
+3|8|4|17|9|112|1|4|19|9|13|990|4|30|1|$[2|$(9|13)]\n
+3|8|4|17|9|112|1|4|17|9|13|990|4|30|1|Still in selection\n
+3|8|4|17|9|112|1|4|17|9|13|998|4|30|1|Ressources\n
+3|8|4|17|9|112|1|4|17|9|13|999|4|30|1|None\n
+//...Display progress message
+3|8|6|${1}|instant
+
+// Timers
+timer: 9|100|9|151
+timer: 9|100|9|152
+timer: 9|100|9|153
+timer: 9|100|9|154
+timer: 9|101|9|155
+9|151|4|18|9|151|519|8|9|151|float|500
+9|152|4|18|9|152|519|8|9|152|float|500
+9|153|4|18|9|153|519|8|9|153|float|500
+9|154|4|18|9|154|519|8|9|154|float|500
+
+// On spawn
+3|0|8|9|100|bool|true            // Start timers
+3|0|8|9|101|bool|true
+3|0|8|9|151|float|500            // Set timers values so they don't all give the same item 
+3|0|8|9|152|float|505
+3|0|8|9|153|float|510
+3|0|8|9|154|float|515
+3|0|8|16155|54148|bool|true      // Destroy the Shriek ground to prevent finishing the game without completing the goal mode
+3|0|8|21|16825|bool|true         // Glades TP is here
+3|0|8|21|15068|bool|true         // Glades bridge is here
+3|0|8|9|10|int|999               // Mak so the game doesn't think you have 4 bash
+3|0|8|9|11|int|999
+3|0|8|9|12|int|999
+3|0|8|9|13|int|999
+3|0|8|48248|19396|int|1          // Set Lupo's Glades items as already bought
+3|0|8|48248|57987|int|1
+3|0|8|48248|41666|int|1
+3|0|8|48248|18767|bool|true
+3|0|8|48248|45538|bool|true
+3|0|8|48248|3638|bool|true
+3|0|8|48248|1590|bool|true
+3|0|8|48248|1557|bool|true
+3|0|8|48248|29604|bool|true
+3|0|8|48248|48423|bool|true
+3|0|8|48248|61146|bool|true
+3|0|8|48248|4045|bool|true
+3|0|8|21786|42309|bool|true     // Open Regen door from the start 
+
+// Goal mode not completed messagebox
+9|155|8|9|114|bool|false
+9|155|4|24|539|-3615|640|-3552|8|9|115|bool|true
+9|155|4|24|539|-3615|640|-3552|8|9|114|bool|true
+9|115|6|The unstability is too powerful here!\n Collect more pickups to restore this area\nPickups: $(9|20)/200|f=300
+
+9|155|4|17|9|114|0|8|9|115|bool|false
+
+// On reload
+3|1|8|9|0|int|12  // Set Grom price
+// Build Plando wheel...
+3|1|16|8  //... Remove default wheel
+//... Display progress
+3|1|16|0|0|9|Progress message
+3|1|16|1|0|9|Display your progress and your current abilities
+3|1|16|4|0|9|0|4|16|ShowProgressWithHints
+3|1|16|2|0|9|file:assets/icons/game/message.png
+//... Display choice
+3|1|16|0|0|10|Display choice
+3|1|16|1|0|10|Display the abilities you can chose from
+3|1|16|4|0|10|0|8|9|0|int|2
+3|1|16|2|0|10|file:assets/icons/game/message.png
+//... Binding 1
+3|1|16|0|0|11|Choice 1
+3|1|16|1|0|11|Get the ability from Binding 1
+3|1|16|4|0|11|0|4|16|Binding1
+3|1|16|2|0|11|file:assets/unstable_plando/1.png
+//... Binding 2
+3|1|16|0|0|0|Choice 2
+3|1|16|1|0|0|Get the ability from Binding 2
+3|1|16|4|0|0|0|4|16|Binding2
+3|1|16|2|0|0|file:assets/unstable_plando/2.png
+//... Binding 3
+3|1|16|0|0|1|Choice 3
+3|1|16|1|0|1|Get the ability from Binding 3
+3|1|16|4|0|1|0|4|16|Binding3
+3|1|16|2|0|1|file:assets/unstable_plando/3.png
+//... Binding 4
+3|1|8|9|0|int|23
+//... Reroll
+3|1|16|0|0|4|Reroll
+3|1|16|1|0|4|Replace your current choices by new ones
+3|1|16|4|0|4|0|8|9|0|int|8
+3|1|16|2|0|4|file:assets/unstable_plando/reroll.png
+//... Full Reroll
+3|1|16|0|0|5|Full Reroll
+3|1|16|1|0|5|Replace all your abilities by new ones
+3|1|16|4|0|5|0|8|9|0|int|6
+3|1|16|2|0|5|file:assets/unstable_plando/fullreroll.png
+//... Build Hint wheel
+3|1|8|9|0|int|13
+
+
+/////// TRIGGERS
+9|0|8|9|0|int|0     // Auto-reset all triggers
+////    9|0=1 grants one ability
+// When doing an ability choice...
+9|0=1|8|9|50|int|-1
+// ... Give the new ability
+9|0=1|4|17|9|9|0|2|0
+9|0=1|4|17|9|9|5|2|5
+9|0=1|4|17|9|9|8|2|8
+9|0=1|4|17|9|9|14|2|14
+9|0=1|4|17|9|9|51|2|51
+9|0=1|4|17|9|9|57|2|57
+9|0=1|4|17|9|9|62|2|62
+9|0=1|4|17|9|9|74|2|74
+9|0=1|4|17|9|9|77|2|77
+9|0=1|4|17|9|9|97|2|97
+9|0=1|4|17|9|9|98|2|98
+9|0=1|4|17|9|9|100|2|100
+9|0=1|4|17|9|9|101|2|101
+9|0=1|4|17|9|9|102|2|102
+9|0=1|4|17|9|9|104|2|104
+9|0=1|4|17|9|9|106|2|106
+9|0=1|4|17|9|9|115|2|115
+9|0=1|4|17|9|9|116|2|116
+9|0=1|4|17|9|9|118|2|118
+//... Set last ability memory
+9|0=1|4|17|9|112|0|8|9|11|int|$(9|9)
+9|0=1|4|17|9|112|1|8|9|10|int|$(9|9)
+//... Tell that you made a choice
+9|0=1|8|9|110|bool|false
+//... If you still need to reroll, trigger another one
+9|0=1|4|18|9|50|0|8|9|0|int|5
+////    9|0=2 display the choices messagebox
+9|0=2|4|17|9|110|1|4|29|0|Chose an ability 
+9|0=2|4|17|9|110|1|4|19|9|14|990|4|30|0|to replace $[2|$(9|14)]
+9|0=2|4|17|9|110|1|4|30|0|\n[Binding1]: $[2|$(9|1)]\n[Binding2]: $[2|$(9|2)]\n[Binding3]: $[2|$(9|3)]
+9|0=2|4|17|9|110|1|4|17|9|111|1|4|30|0|\n[Binding4]: $[2|$(9|4)]
+9|0=2|4|17|9|110|1|6|${0}
+9|0=2|4|17|9|110|0|6|Collect another pickup in order to get a new ability!
+////    9|0=3 is a trigger for when you collect a pickup
+9|0=3|8|9|20|int|+1                   //... Increase pickup count
+9|0=3|8|9|50|int|+1                   //... Increase the number of time you have to reroll
+9|0=3|4|17|9|50|1|8|9|0|int|5   //... Trigger a reroll
+9|0=3|4|18|9|50|1|4|16|Binding1       //... If you didn't chose your last pickup, default to option 1
+// Check Goal Mode
+9|0=3|4|17|9|20|200|8|16155|54148|bool|false
+9|0=3|4|17|9|20|200|6|The top of Willow is stable again!
+9|0=3|4|17|9|20|200|8|9|101|bool|false
+////    9|0=4 is a trigger for when you collect a wisp
+//... Get 5 ores
+9|0=4|1|2|mute
+9|0=4|1|2|mute
+9|0=4|1|2|mute
+9|0=4|1|2|mute
+9|0=4|1|2|mute
+9|0=4|6|5 <purple>Gorlek Ore</>
+//... Increase wisp count
+9|0=4|8|4|21|int|+1
+//... Trigger ability change
+9|0=4|8|9|0|int|3
+////    9|0=5 is a trigger for getting a new ability
+//... Remove the oldest ability
+9|0=5|8|9|15|int|$(9|13)
+9|0=5|8|9|0|int|7
+//... Update ability's order
+9|0=5|8|9|14|int|$(9|13)
+9|0=5|8|9|13|int|$(9|12)
+9|0=5|8|9|12|int|$(9|11)
+9|0=5|4|17|9|112|0|8|9|11|int|990
+9|0=5|4|17|9|112|1|8|9|11|int|$(9|10)
+9|0=5|4|17|9|112|1|8|9|10|int|990
+9|0=5|8|9|0|int|10
+////    9|0=6 is a trigger for a full reroll
+//... Remove all your abilities
+9|0=6|4|17|9|31|0|6|You don't have any full reroll lefts
+9|0=6|4|18|9|31|0|8|9|15|int|$(9|10)
+9|0=6|4|18|9|31|0|8|9|0|int|7
+9|0=6|4|18|9|31|0|8|9|15|int|$(9|11)
+9|0=6|4|18|9|31|0|8|9|0|int|7
+9|0=6|4|18|9|31|0|8|9|15|int|$(9|12)
+9|0=6|4|18|9|31|0|8|9|0|int|7
+9|0=6|4|18|9|31|0|8|9|15|int|$(9|13)
+9|0=6|4|18|9|31|0|8|9|0|int|7
+9|0=6|4|18|9|31|0|6|Removed all your abilities
+9|0=6|4|18|9|31|0|8|9|10|int|999
+9|0=6|4|18|9|31|0|8|9|11|int|999
+9|0=6|4|18|9|31|0|8|9|12|int|999
+9|0=6|4|18|9|31|0|8|9|13|int|999
+9|0=6|4|18|9|31|0|8|9|0|int|11     //... Trigger rerolls depending on your max ability number
+9|0=6|4|18|9|31|0|8|9|31|int|-1
+////    9|0=7 remove the skill stored in 9|15
+// Remove a skill
+9|0=7|4|17|9|15|0|2|-0|mute
+9|0=7|4|17|9|15|5|2|-5|mute
+9|0=7|4|17|9|15|8|2|-8|mute
+9|0=7|4|17|9|15|14|2|-14|mute
+9|0=7|4|17|9|15|51|2|-51|mute
+9|0=7|4|17|9|15|57|2|-57|mute
+9|0=7|4|17|9|15|62|2|-62|mute
+9|0=7|4|17|9|15|74|2|-74|mute
+9|0=7|4|17|9|15|77|2|-77|mute
+9|0=7|4|17|9|15|97|2|-97|mute
+9|0=7|4|17|9|15|98|2|-98|mute
+9|0=7|4|17|9|15|100|2|-100|mute
+9|0=7|4|17|9|15|101|2|-101|mute
+9|0=7|4|17|9|15|102|2|-102|mute
+9|0=7|4|17|9|15|104|2|-104|mute
+9|0=7|4|17|9|15|106|2|-106|mute
+9|0=7|4|17|9|15|115|2|-115|mute
+9|0=7|4|17|9|15|116|2|-116|mute
+9|0=7|4|17|9|15|118|2|-118|mute
+////    9|0=8 if you used a reroll
+9|0=8|4|17|9|110|0|6|You can't reroll now
+9|0=8|4|19|9|30|1|4|17|9|110|1|6|You don't have any rerolls left
+9|0=8|4|18|9|30|0|4|17|9|110|1|8|9|0|int|9
+////    9|0=9 Consume a reroll
+9|0=9|8|9|50|int|1
+9|0=9|8|9|0|int|10
+9|0=9|8|9|30|int|-1
+////    9|0=10 pull 4 different ability choice
+//... Trigger an ability choice
+9|0=10|8|9|1|int|$(9|151)
+9|0=10|8|9|2|int|$(9|152)
+9|0=10|8|9|3|int|$(9|153)
+9|0=10|8|9|4|int|$(9|154)
+9|0=10|8|9|110|bool|true    // Store the fact that you can make a choice
+9|0=10|8|9|0|int|2          // Display choice messagebox
+////    9|0=11 consume a full reroll
+9|0=11|4|17|9|112|0|8|9|50|int|3
+9|0=11|4|17|9|112|1|8|9|50|int|4
+9|0=11|8|9|0|int|5
+////    9|0=12 set Grom prices
+9|0=12|4|17|9|113|0|8|17|16826|int|10   // 4th choice
+9|0=12|4|17|9|113|1|8|17|16826|int|7
+9|0=12|4|17|9|113|0|8|17|51231|int|15   // 4th ability
+9|0=12|4|17|9|113|1|8|17|51231|int|11
+9|0=12|4|17|9|113|0|8|17|18752|int|11   // Permanent burrow
+9|0=12|4|17|9|113|1|8|17|18752|int|8
+9|0=12|4|17|9|113|0|8|17|23608|int|3    // Permanent regen
+9|0=12|4|17|9|113|1|8|17|23608|int|2
+9|0=12|8|17|16587|int|1                 // Reroll
+9|0=12|8|17|40449|int|2                 // Full reroll
+9|0=12|8|17|15069|int|1                 // SL
+////    9|0=13 Build the hint wheel
+//... Hints submenu
+9|0=13|16|0|0|7|Opher's journal
+9|0=13|16|1|0|7|Open Opher's journal
+9|0=13|16|4|0|7|0|16|6|1
+9|0=13|16|2|0|7|file:assets/unstable_plando/opher.png
+//... Return plando wheel
+9|0=13|16|0|1|7|Return
+9|0=13|16|1|1|7|Close Opher's journal
+9|0=13|16|4|1|7|0|16|6|0
+9|0=13|16|2|1|7|file:assets/unstable_plando/return.png
+//... Opher's advice 1
+9|0=13|4|17|9|120|1|16|0|1|9|Opher's advice
+9|0=13|4|17|9|120|1|16|1|1|9|Read Opher's advice
+9|0=13|4|17|9|120|1|16|4|1|9|0|8|9|0|int|14
+9|0=13|4|17|9|120|1|16|2|1|9|file:assets/icons/game/message.png
+//... Spirit Light
+9|0=13|4|17|9|121|1|16|0|1|10|Spirit Light
+9|0=13|4|17|9|121|1|16|1|1|10|Read information about Spirit Light
+9|0=13|4|17|9|121|1|16|4|1|10|0|8|9|0|int|15
+9|0=13|4|17|9|121|1|16|2|1|10|file:assets/icons/game/message.png
+//... Opher's roll info 1
+9|0=13|4|17|9|122|1|16|0|1|11|Unstability 1
+9|0=13|4|17|9|122|1|16|1|1|11|Read information about ability choice
+9|0=13|4|17|9|122|1|16|4|1|11|0|8|9|0|int|16
+9|0=13|4|17|9|122|1|16|2|1|11|file:assets/icons/game/message.png
+//... Opher's roll info 2
+9|0=13|4|17|9|123|1|16|0|1|0|Unstability 2
+9|0=13|4|17|9|123|1|16|1|1|0|Read more information about ability choice
+9|0=13|4|17|9|123|1|16|4|1|0|0|8|9|0|int|17
+9|0=13|4|17|9|123|1|16|2|1|0|file:assets/icons/game/message.png
+//... Opher's permanent skill
+9|0=13|4|17|9|124|1|16|0|1|1|Permanent skills 
+9|0=13|4|17|9|124|1|16|1|1|1|Read information about skills you'll keep for life
+9|0=13|4|17|9|124|1|16|4|1|1|0|8|9|0|int|18
+9|0=13|4|17|9|124|1|16|2|1|1|file:assets/icons/game/message.png
+//... Opher's tree
+9|0=13|4|17|9|125|1|16|0|1|2|Spirit Trees
+9|0=13|4|17|9|125|1|16|1|1|2|Read observation about Spirit Trees
+9|0=13|4|17|9|125|1|16|4|1|2|0|8|9|0|int|19
+9|0=13|4|17|9|125|1|16|2|1|2|file:assets/icons/game/message.png
+//... Opher's Grom
+9|0=13|4|17|9|126|1|16|0|1|3|Grom's wish
+9|0=13|4|17|9|126|1|16|1|1|3|Read about what worries Grom
+9|0=13|4|17|9|126|1|16|4|1|3|0|8|9|0|int|20
+9|0=13|4|17|9|126|1|16|2|1|3|file:assets/icons/game/message.png
+//... Opher's Wisps
+9|0=13|4|17|9|127|1|16|0|1|4|Wisps 
+9|0=13|4|17|9|127|1|16|1|1|4|Read observation about Wisps
+9|0=13|4|17|9|127|1|16|4|1|4|0|8|9|0|int|21
+9|0=13|4|17|9|127|1|16|2|1|4|file:assets/icons/game/message.png
+//... Opher's Willow
+9|0=13|4|17|9|128|1|16|0|1|5|Willow
+9|0=13|4|17|9|128|1|16|1|1|5|Read observation about Willow
+9|0=13|4|17|9|128|1|16|4|1|5|0|8|9|0|int|22
+9|0=13|4|17|9|128|1|16|2|1|5|file:assets/icons/game/message.png
+////    9|0=14 display Opher's advice 1
+9|0=14|6|If you don't want to get stuck, you should probably keep some easy to access pickups at all time.\nThat way you always have a solution to a bad ability set.|f=500
+////    9|0=15 display Opher's spirit light
+9|0=15|6|Spirit Light is pretty hard to get by nowadays...\nIt seems like its only decent sources are Spirit Trials.|f=400
+////    9|0=16 display Opher's roll info 1
+9|0=16|6|This instability seems to follow some rules.\nI don't think it will let you chose an ability you already have right now.|f=400
+////    9|0=17 display Opher's roll info 2
+9|0=17|6|Motay noticed that some of your abilities are rarer than others.\nIf you get a powerful ability, you beter make it count!|f=400
+////    9|0=18 display Opher's permanent skill
+9|0=18|6|Grom can make some of your abilities permanent but he will need some Gorlek ores.\nHe says it'll also make rarer abilities more common.|f=600
+////    9|0=19 display Opher's tree
+9|0=19|6|Spirit Trees are oddly stable.\nI think all of them should give you the same abilities as normal.|f=400
+////    9|0=20 display Opher's Grom
+9|0=20|6|I heard that Grom is worried about the map pedestal in Ruins.\nHe might drop his price if you repair it?|f=400
+////    9|0=21 display Opher's Wisps
+9|0=21|6|The instability seems to have fused Wisps and Gorlek Ores.\nMotay thinks you'll get 5 Ores for each wisps and it should also restore the Glades.|f=600
+////    9|0=22 display Opher's Willow
+9|0=22|6|Willow is definitely the most unstable place of Niwen.\nI think you'll go through a massive change when you'll break its corrupted hearts.|f=600
+////    9|0=23 adds Binding4 to the plando wheel if you bought the upgrade
+9|0=23|4|17|9|111|1|16|0|0|2|Choice 4
+9|0=23|4|17|9|111|1|16|1|0|2|Get the ability from Binding 4
+9|0=23|4|17|9|111|1|16|4|0|2|0|4|16|Binding4
+9|0=23|4|17|9|111|1|16|2|0|2|file:assets/unstable_plando/4.png
+
+
+// Chosing an ability...
+//... Binding 1
+3|2|4|17|9|110|1|8|9|9|int|$(9|1)
+3|2|4|17|9|110|1|8|9|0|int|1
+//... Binding 2
+3|3|4|17|9|110|1|8|9|9|int|$(9|2)
+3|3|4|17|9|110|1|8|9|0|int|1
+//... Binding 3
+3|4|4|17|9|110|1|8|9|9|int|$(9|3)
+3|4|4|17|9|110|1|8|9|0|int|1
+//... Binding 4 (only if you bought the upgrade)
+3|5|4|17|9|111|1|4|17|9|110|1|8|9|9|int|$(9|4)
+3|5|4|17|9|111|1|4|17|9|110|1|8|9|0|int|1
+
+// Converting timers to respective abilities...
+//... Binding 1
+9|1|4|17|9|1|500.5|8|9|1|int|0
+9|1|4|17|9|1|501|8|9|1|int|5
+9|1|4|17|9|1|502|8|9|1|int|8
+9|1|4|17|9|1|503|8|9|1|int|14
+9|1|4|17|9|1|504|8|9|1|int|51
+9|1|4|17|9|1|505|8|9|1|int|57
+9|1|4|17|9|1|506|8|9|1|int|62
+9|1|4|17|9|1|507|8|9|1|int|74
+9|1|4|17|9|1|508|8|9|1|int|77
+9|1|4|17|9|1|509|8|9|1|int|97
+9|1|4|17|9|1|510|8|9|1|int|98
+9|1|4|17|9|1|511|8|9|1|int|100
+9|1|4|17|9|1|512|8|9|1|int|101
+9|1|4|17|9|1|513|8|9|1|int|102
+9|1|4|17|9|1|514|8|9|1|int|104
+9|1|4|17|9|1|515|8|9|1|int|106
+9|1|4|17|9|1|516|8|9|1|int|115
+9|1|4|17|9|1|517|8|9|1|int|116
+9|1|4|17|9|1|518|8|9|1|int|118
+//... Binding 2
+9|2|4|17|9|2|500|8|9|2|int|0
+9|2|4|17|9|2|501|8|9|2|int|5
+9|2|4|17|9|2|502|8|9|2|int|8
+9|2|4|17|9|2|503|8|9|2|int|14
+9|2|4|17|9|2|504|8|9|2|int|51
+9|2|4|17|9|2|505|8|9|2|int|57
+9|2|4|17|9|2|506|8|9|2|int|62
+9|2|4|17|9|2|507|8|9|2|int|74
+9|2|4|17|9|2|508|8|9|2|int|77
+9|2|4|17|9|2|509|8|9|2|int|97
+9|2|4|17|9|2|510|8|9|2|int|98
+9|2|4|17|9|2|511|8|9|2|int|100
+9|2|4|17|9|2|512|8|9|2|int|101
+9|2|4|17|9|2|513|8|9|2|int|102
+9|2|4|17|9|2|514|8|9|2|int|104
+9|2|4|17|9|2|515|8|9|2|int|106
+9|2|4|17|9|2|516|8|9|2|int|115
+9|2|4|17|9|2|517|8|9|2|int|116
+9|2|4|17|9|2|518|8|9|2|int|118
+//... Binding 3
+9|3|4|17|9|3|500|8|9|3|int|0
+9|3|4|17|9|3|501|8|9|3|int|5
+9|3|4|17|9|3|502|8|9|3|int|8
+9|3|4|17|9|3|503|8|9|3|int|14
+9|3|4|17|9|3|504|8|9|3|int|51
+9|3|4|17|9|3|505|8|9|3|int|57
+9|3|4|17|9|3|506|8|9|3|int|62
+9|3|4|17|9|3|507|8|9|3|int|74
+9|3|4|17|9|3|508|8|9|3|int|77
+9|3|4|17|9|3|509|8|9|3|int|97
+9|3|4|17|9|3|510|8|9|3|int|98
+9|3|4|17|9|3|511|8|9|3|int|100
+9|3|4|17|9|3|512|8|9|3|int|101
+9|3|4|17|9|3|513|8|9|3|int|102
+9|3|4|17|9|3|514|8|9|3|int|104
+9|3|4|17|9|3|515|8|9|3|int|106
+9|3|4|17|9|3|516|8|9|3|int|115
+9|3|4|17|9|3|517|8|9|3|int|116
+9|3|4|17|9|3|518|8|9|3|int|118
+//... Binding 4
+9|4|4|17|9|4|500|8|9|4|int|0
+9|4|4|17|9|4|501|8|9|4|int|5
+9|4|4|17|9|4|502|8|9|4|int|8
+9|4|4|17|9|4|503|8|9|4|int|14
+9|4|4|17|9|4|504|8|9|4|int|51
+9|4|4|17|9|4|505|8|9|4|int|57
+9|4|4|17|9|4|506|8|9|4|int|62
+9|4|4|17|9|4|507|8|9|4|int|74
+9|4|4|17|9|4|508|8|9|4|int|77
+9|4|4|17|9|4|509|8|9|4|int|97
+9|4|4|17|9|4|510|8|9|4|int|98
+9|4|4|17|9|4|511|8|9|4|int|100
+9|4|4|17|9|4|512|8|9|4|int|101
+9|4|4|17|9|4|513|8|9|4|int|102
+9|4|4|17|9|4|514|8|9|4|int|104
+9|4|4|17|9|4|515|8|9|4|int|106
+9|4|4|17|9|4|516|8|9|4|int|115
+9|4|4|17|9|4|517|8|9|4|int|116
+9|4|4|17|9|4|518|8|9|4|int|118
+
+// Willow hearts trigger full reroll
+16155|42976|8|9|31|int|+1
+16155|42976|8|9|0|int|6
+16155|54940|8|9|31|int|+1
+16155|54940|8|9|0|int|6
+16155|24290|8|9|31|int|+1
+16155|24290|8|9|0|int|6
+16155|28478|8|9|31|int|+1
+16155|28478|8|9|0|int|6
+16155|3588|8|9|31|int|+1
+16155|3588|8|9|0|int|6
+16155|65277|8|9|31|int|+1
+16155|65277|8|9|0|int|6
+16155|41488|8|9|31|int|+1
+16155|41488|8|9|0|int|6
+16155|60752|8|9|31|int|+1
+16155|60752|8|9|0|int|6
+
+// Rebuild Glades depending on your wisp count
+9|21=1|8|21|18751|bool|true          // Thorns on 1st wisp
+9|21=2|8|21|16586|bool|true          // Cave on 2nd wisp
+9|21=3|8|21|51230|bool|true          // 1st huts on 3rd wisp
+9|21=4|8|21|23607|bool|true          // 2nd huts on 4th wisp
+9|21=5|8|21|40448|bool|true          // 3rd huts on 5th wisp
+
+// Standard Pickups
+58674|20983|8|9|0|int|3        //  EastHollow.RightKwolokEX
+58674|32647|8|9|0|int|3        //  WoodsMain.ShrineEX
+58674|64057|8|9|0|int|3        //  WoodsMain.BehindDoorRoofEX
+58674|30908|8|9|0|int|3        //  WoodsMain.UpperLeafPileEX
+58674|59714|8|9|0|int|3        //  WoodsMain.YellowWallEX
+58674|54516|8|9|0|int|3        //  WoodsMain.HiddenEX
+28895|22761|8|9|0|int|3        //  LowerReach.TrialEX
+28895|3777|8|9|0|int|3         //  LowerReach.AboveBaurUpperEX
+28895|38049|8|9|0|int|3        //  LowerReach.BelowLupoEX
+28895|40089|8|9|0|int|3        //  UpperReach.SwingPoleEX
+28895|36231|8|9|0|int|3        //  LowerReach.TPLeftEX
+28895|40242|8|9|0|int|3        //  UpperReach.SwimEX
+28895|4301|8|9|0|int|3         //  LowerReach.MeltIceEX
+7228|56821|8|9|0|int|3         //  LowerWastes.PurpleWallEX
+7228|52086|8|9|0|int|3         //  LowerWastes.SunsetViewEX
+7228|35329|8|9|0|int|3         //  UpperWastes.KSDoorEX
+7228|61548|8|9|0|int|3         //  UpperWastes.SpinLasersLowerEX
+7228|48993|8|9|0|int|3         //  UpperWastes.SpinLasersMiddleEX
+42178|51468|8|9|0|int|3        //  GladesTown.LupoSoupEX
+42178|13327|8|9|0|int|3        //  GladesTown.BraveMokiHutEX
+42178|57455|8|9|0|int|3        //  GladesTown.MotayHutEX
+42178|30520|8|9|0|int|3        //  GladesTown.HoleHutEX
+42178|51934|8|9|0|int|3        //  GladesTown.KeyMokiHutEX
+42178|59623|8|9|0|int|3        //  GladesTown.UpperLeftEX
+42178|9780|8|9|0|int|3         //  GladesTown.LupoSwimMiddleEX
+42178|18448|8|9|0|int|3        //  GladesTown.CaveBurrowEX
+42178|6117|8|9|0|int|3         //  GladesTown.BelowHoleHutEX
+9593|5253|8|9|0|int|3          //  MarshPastOpher.TrialLeftEX
+937|45987|8|9|0|int|3          //  EastHollow.SecretRoofEX
+937|30182|8|9|0|int|3          //  EastHollow.BashEX
+937|45744|8|9|0|int|3          //  WestGlades.UpperPoolEX
+937|19529|8|9|0|int|3          //  EastHollow.MortarEX
+937|31036|8|9|0|int|3          //  WestGlades.AbovePlantEX
+945|58723|8|9|0|int|3          //  PoolsApproach.MillPathEX
+945|14530|8|9|0|int|3          //  PoolsApproach.AboveWheelEX
+945|10682|8|9|0|int|3          //  PoolsApproach.CurrentEX
+5377|18345|8|9|0|int|3         //  EastPools.BehindCrusherEX
+5377|21860|8|9|0|int|3         //  UpperPools.RightBubblesEX
+5377|27204|8|9|0|int|3         //  EastPools.BelowLeverEX
+5377|33180|8|9|0|int|3         //  UpperPools.RoofEX
+5377|44122|8|9|0|int|3         //  WestPools.EscapeRevisitEX
+5377|7540|8|9|0|int|3          //  EastPools.AboveTpEX
+5377|35440|8|9|0|int|3         //  EastPools.LupoEX
+5377|52791|8|9|0|int|3         //  UpperPools.CurrentEX
+5377|17396|8|9|0|int|3         //  EastPools.CurrentEX
+5377|13832|8|9|0|int|3         //  EastPools.TwoCrushersEX
+18793|29979|8|9|0|int|3        //  UpperDepths.TeleporterEX
+18793|2881|8|9|0|int|3         //  LowerDepths.LeftEX
+18793|6573|8|9|0|int|3         //  UpperDepths.HiveEX
+18793|19004|8|9|0|int|3        //  UpperDepths.EntrySpikesEX
+18793|42980|8|9|0|int|3        //  EastHollow.DepthsExteriorEX
+18793|15396|8|9|0|int|3        //  UpperDepths.EntryRoofEX
+21786|10413|8|9|0|int|3        //  MarshPastOpher.TrialRightEX
+21786|23154|8|9|0|int|3        //  MarshSpawn.LongSwimEX
+21786|50255|8|9|0|int|3        //  MarshPastOpher.CeilingEX
+37858|22107|8|9|0|int|3        //  InnerWellspring.ThornEX
+37858|31136|8|9|0|int|3        //  InnerWellspring.GrappleTreeEX
+37858|41380|8|9|0|int|3        //  InnerWellspring.DrainEX
+37858|59022|8|9|0|int|3        //  InnerWellspring.LibraryEX
+37858|41911|8|9|0|int|3        //  InnerWellspring.LupoEX
+37858|52110|8|9|0|int|3        //  InnerWellspring.RotateRoomEX
+37858|56444|8|9|0|int|3        //  InnerWellspring.EscapeRevisitEX
+37858|45656|8|9|0|int|3        //  InnerWellspring.WaterSwitchEX
+53632|12019|8|9|0|int|3        //  WestGlades.GrappleEX
+53632|62356|8|9|0|int|3        //  OuterWellspring.SwimEX
+53632|51706|8|9|0|int|3        //  OuterWellspring.RightWallEX
+53632|42264|8|9|0|int|3        //  OuterWellspring.EntranceRoofEX
+53632|6500|8|9|0|int|3         //  OuterWellspring.WheelEX
+20120|48829|8|9|0|int|3        //  LowerWastes.UpperPathEX
+20120|52812|8|9|0|int|3        //  UpperWastes.PurpleWallEX
+20120|30740|8|9|0|int|3        //  UpperWastes.MissileSpawnEX
+20120|8910|8|9|0|int|3         //  LowerWastes.SkeetoHiveEX
+20120|10397|8|9|0|int|3        //  LowerWastes.MuncherPitEX
+20120|19113|8|9|0|int|3        //  LowerWastes.BurrowTreeEX
+20120|57781|8|9|0|int|3        //  LowerWastes.SandPotEX
+20120|2013|8|9|0|int|3         //  UpperWastes.RoofEX
+28287|32414|8|9|0|int|3        //  UpperReach.LifeForceEX
+58674|64484|8|9|0|int|3        //  WoodsMain.FeedingGroundsEX
+28895|2129|8|9|0|int|3         //  UpperReach.HiddenEX
+28895|45337|8|9|0|int|3        //  LowerReach.IcefallEX
+28895|46404|8|9|0|int|3        //  LowerReach.EscapeRevisitEX
+28895|53283|8|9|0|int|3        //  LowerReach.RoofLeftEX
+36153|36521|8|9|0|int|3        //  WeepingRidge.SpikeClimbEX
+36153|23902|8|9|0|int|3        //  WillowsEnd.UpperLeftEX
+36153|3662|8|9|0|int|3         //  WillowsEnd.UpperRightEX
+36153|12077|8|9|0|int|3        //  WeepingRidge.PortalEX
+7228|54275|8|9|0|int|3         //  UpperWastes.SpinLasersRightEX
+24922|62138|8|9|0|int|3        //  MarshSpawn.CrusherSwimEX
+42178|40609|8|9|0|int|3        //  LowerReach.BreakWallEX
+937|50176|8|9|0|int|3          //  WestHollow.CrusherEX
+46462|29054|8|9|0|int|3        //  EastHollow.KwolokSwimLeftEX
+945|10833|8|9|0|int|3          //  MarshPastOpher.PoolsPathEX
+5377|628|8|9|0|int|3           //  UpperPools.LeftBubblesEX
+5377|62180|8|9|0|int|3         //  WestPools.BurrowEX
+18793|23799|8|9|0|int|3        //  LowerDepths.RightEX
+18793|18395|8|9|0|int|3        //  UpperDepths.BossPathEX
+21786|21727|8|9|0|int|3        //  MarshSpawn.PoolsPathEX
+37858|64086|8|9|0|int|3        //  InnerWellspring.AboveSpinArenaEX
+37858|33063|8|9|0|int|3        //  InnerWellspring.ShortcutWheelEX
+16155|49381|8|9|0|int|3        //  WillowsEnd.EntryEX
+16155|55446|8|9|0|int|3        //  WillowsEnd.RedirectEX
+20120|224|8|9|0|int|3          //  LowerWastes.BottomRightEX
+20120|33275|8|9|0|int|3        //  LowerWastes.LastStandEX
+20120|17798|8|9|0|int|3        //  LowerWastes.UpperPathHiddenEX
+58674|59691|8|9|0|int|3        //  WoodsEntry.TpEX
+58674|8487|8|9|0|int|3         //  WoodsEntry.MudPitEX
+58674|23186|8|9|0|int|3        //  WoodsMain.BelowKeystonesEX
+58674|42158|8|9|0|int|3        //  WoodsMain.LowerLeafPileEX
+58674|33893|8|9|0|int|3        //  WoodsMain.MiddleLeafPileEX
+58674|17974|8|9|0|int|3        //  WoodsMain.PetrifiedHowlEX
+58674|22472|8|9|0|int|3        //  WoodsEntry.LeafPileEX
+28895|7597|8|9|0|int|3         //  UpperReach.WellEX
+28895|54373|8|9|0|int|3        //  LowerReach.WindHiddenEX
+28895|55384|8|9|0|int|3        //  LowerReach.BelowBaurEX
+28895|24533|8|9|0|int|3        //  LowerReach.AboveBaurLowerEX
+28895|35045|8|9|0|int|3        //  LowerReach.WindBottomEX
+28895|38143|8|9|0|int|3        //  LowerReach.AboveDoorEX
+28895|46711|8|9|0|int|3        //  LowerReach.RoofRightEX
+28895|45066|8|9|0|int|3        //  LowerReach.BurrowEX
+24922|32076|8|9|0|int|3        //  MarshSpawn.BurrowsApproachLedgeEX
+42178|30206|8|9|0|int|3        //  GladesTown.AboveCaveEX
+42178|37028|8|9|0|int|3        //  GladesTown.LupoSwimLeftEX
+42178|63404|8|9|0|int|3        //  GladesTown.UpdraftCeilingEX
+42178|44748|8|9|0|int|3        //  GladesTown.LeafPileEX
+42178|42762|8|9|0|int|3        //  GladesTown.AboveTpEX
+9593|17818|8|9|0|int|3         //  HowlsDen.DoubleJumpEX
+9593|59344|8|9|0|int|3         //  MarshPastOpher.SwingPoleEX
+9593|42047|8|9|0|int|3         //  MarshSpawn.FightRoomEX
+9593|5929|8|9|0|int|3          //  MarshSpawn.PreLupoEX
+937|40657|8|9|0|int|3          //  WestGlades.LowerPoolEX
+937|16163|8|9|0|int|3          //  WestHollow.FarLeftEX
+937|2538|8|9|0|int|3           //  WestHollow.RockPuzzleEX
+937|37926|8|9|0|int|3          //  WestHollow.DashRightEX
+937|48192|8|9|0|int|3          //  WestHollow.BelowLupoEX
+937|61744|8|9|0|int|3          //  WestHollow.AboveDashEX
+937|13413|8|9|0|int|3          //  EastHollow.HornBeetleFightEX
+937|5568|8|9|0|int|3           //  EastHollow.SpikeLanternEX
+46462|20780|8|9|0|int|3        //  EastHollow.KwolokSwimRightEX
+5377|33110|8|9|0|int|3         //  UpperPools.FishPoolEX
+5377|25391|8|9|0|int|3         //  WestPools.TpEX
+21786|59513|8|9|0|int|3        //  MarshSpawn.LeftTokkEX
+21786|49485|8|9|0|int|3        //  MarshSpawn.FirstPickupEX
+21786|6987|8|9|0|int|3         //  MarshSpawn.BridgeEX
+21786|43668|8|9|0|int|3        //  HowlsDen.UpperEX
+21786|16206|8|9|0|int|3        //  HowlsDen.AboveTPEX
+37858|45906|8|9|0|int|3        //  InnerWellspring.ThreeWheelsEX
+37858|2797|8|9|0|int|3         //  InnerWellspring.AboveTpEX
+20120|57133|8|9|0|int|3        //  LowerWastes.MuncherClimbEX
+23987|23015|8|9|0|int|3        //  GladesTown.ArcingShard
+23987|14014|8|9|0|int|3        //  GladesTown.BountyShard
+23987|897|8|9|0|int|3          //  LowerReach.CatalystShard
+24922|46311|8|9|0|int|3        //  MidnightBurrows.DeflectorShard
+5377|40328|8|9|0|int|3         //  EastPools.EnergyHarvestShard
+23987|36359|8|9|0|int|3        //  LowerReach.FractureShard
+23987|50364|8|9|0|int|3        //  LowerWastes.LastStandShard
+23987|19630|8|9|0|int|3        //  UpperReach.LifeForceShard
+23987|53934|8|9|0|int|3        //  OuterWellspring.LifeHarvestShard
+23987|50415|8|9|0|int|3        //  MarshSpawn.LifepactShard
+21786|63545|8|9|0|int|3        //  HowlsDen.MagnetShard
+23987|25183|8|9|0|int|3        //  WoodsMain.OverflowShard
+23987|61017|8|9|0|int|3        //  WestHollow.QuickshotShard
+23987|9864|8|9|0|int|3         //  MarshSpawn.RecklessShard
+23987|59173|8|9|0|int|3        //  MarshSpawn.ResilienceShard
+23987|986|8|9|0|int|3          //  LowerDepths.SpiritSurgeShard
+23987|62973|8|9|0|int|3        //  EastHollow.SplinterShard
+23987|27134|8|9|0|int|3        //  HowlsDen.StickyShard
+23987|31426|8|9|0|int|3        //  InnerWellspring.ThornShard
+23987|48605|8|9|0|int|3        //  UpperWastes.TurmoilShard
+23987|25996|8|9|0|int|3        //  EastPools.UltraBashShard
+23987|12104|8|9|0|int|3        //  OuterWellspring.UltraGrappleShard
+13428|59730|8|9|0|int|3        //  EastHollow.BashHC
+28895|40744|8|9|0|int|3        //  LowerReach.SnowballHC
+9593|61304|8|9|0|int|3         //  HowlsDen.LeftHC
+937|2463|8|9|0|int|3           //  WestHollow.TrialHC
+937|61897|8|9|0|int|3          //  WestHollow.CrusherHC
+945|37243|8|9|0|int|3          //  PoolsApproach.MillPathHC
+5377|45774|8|9|0|int|3         //  EastPools.FightRoomHC
+5377|63201|8|9|0|int|3         //  EastPools.PurpleWallHC
+18793|62694|8|9|0|int|3        //  LowerDepths.RaceStartHC
+18793|42235|8|9|0|int|3        //  UpperDepths.KeystoneHC
+21786|28908|8|9|0|int|3        //  HowlsDen.RightHC
+21786|25761|8|9|0|int|3        //  MarshSpawn.GrappleHC
+21786|60210|8|9|0|int|3        //  MarshSpawn.RockHC
+21786|20194|8|9|0|int|3        //  MarshPastOpher.TrialHC
+37858|25833|8|9|0|int|3        //  InnerWellspring.DrainHC
+44310|29043|8|9|0|int|3        //  GladesTown.AboveGromHC
+44310|36911|8|9|0|int|3        //  WestGlades.ShrineHC
+44310|17523|8|9|0|int|3        //  GladesTown.LupoSwimHC
+53632|17403|8|9|0|int|3        //  OuterWellspring.HiddenHC
+16155|46270|8|9|0|int|3        //  WillowsEnd.PoisonfallHC
+20120|59046|8|9|0|int|3        //  LowerWastes.UpperPathHC
+20120|12941|8|9|0|int|3        //  LowerWastes.BottomRightHC
+20120|62264|8|9|0|int|3        //  LowerWastes.SandPotHC
+20120|18965|8|9|0|int|3        //  UpperWastes.PurpleWallHC
+58674|9583|8|9|0|int|3         //  EastHollow.SilentSwimEC
+42178|52786|8|9|0|int|3        //  GladesTown.HoleHutEC
+9593|26457|8|9|0|int|3         //  MarshPastOpher.PoolsPathEC
+9593|27562|8|9|0|int|3         //  MarshPastOpher.TrialEC
+937|17761|8|9|0|int|3          //  WestGlades.SwimEC
+937|23772|8|9|0|int|3          //  EastHollow.BashEC
+937|24175|8|9|0|int|3          //  WestHollow.SwimEC
+937|8518|8|9|0|int|3           //  WestHollow.HiddenEC
+945|21334|8|9|0|int|3          //  PoolsApproach.MillPathEC
+5377|1600|8|9|0|int|3          //  UpperPools.BubblesEC
+5377|32750|8|9|0|int|3         //  UpperPools.WaterfallEC
+18793|26618|8|9|0|int|3        //  UpperDepths.SwimEC
+18793|28175|8|9|0|int|3        //  LowerDepths.SwimEC
+21786|17920|8|9|0|int|3        //  MarshSpawn.LeverEC
+21786|10295|8|9|0|int|3        //  MarshPastOpher.BowEC
+21786|61706|8|9|0|int|3        //  MarshSpawn.FangEC
+21786|7152|8|9|0|int|3         //  MarshSpawn.BashEC
+37858|57552|8|9|0|int|3        //  InnerWellspring.LeverEC
+53632|1911|8|9|0|int|3         //  OuterWellspring.RightWallEC
+53632|6869|8|9|0|int|3         //  OuterWellspring.BasementEC
+20120|50026|8|9|0|int|3        //  LowerWastes.UpperPathEC
+20120|11785|8|9|0|int|3        //  LowerWastes.MuncherTunnelEC
+20120|22354|8|9|0|int|3        //  UpperWastes.LedgeEC
+10289|44555|8|9|0|int|3        //  WindtornRuins.EscapeRevisitEC
+58674|42531|8|9|0|int|3        //  WoodsMain.LeftKS
+58674|19769|8|9|0|int|3        //  WoodsMain.UpperKS
+58674|11736|8|9|0|int|3        //  WoodsEntry.UpperKS
+58674|43033|8|9|0|int|3        //  WoodsMain.RightKS
+58674|40073|8|9|0|int|3        //  WoodsEntry.LowerKS
+58674|780|8|9|0|int|3          //  WoodsMain.LowerKS
+28895|22382|8|9|0|int|3        //  UpperReach.MiddleLeftKS
+28895|29898|8|9|0|int|3        //  LowerReach.RightKS
+28895|1053|8|9|0|int|3         //  UpperReach.LowerKS
+28895|37444|8|9|0|int|3        //  LowerReach.MiddleLeftKS
+28895|10823|8|9|0|int|3        //  LowerReach.UpperLeftKS
+28895|9949|8|9|0|int|3         //  UpperReach.MiddleRightKS
+28895|18358|8|9|0|int|3        //  LowerReach.BottomLeftKS
+28895|50368|8|9|0|int|3        //  UpperReach.UpperKS
+7228|20282|8|9|0|int|3         //  UpperWastes.LowerKS
+7228|62117|8|9|0|int|3         //  UpperWastes.UpperKS
+24922|34250|8|9|0|int|3        //  MidnightBurrows.UpperKS
+24922|47244|8|9|0|int|3        //  MidnightBurrows.RightKS
+24922|60358|8|9|0|int|3        //  MidnightBurrows.LeftKS
+24922|33535|8|9|0|int|3        //  MidnightBurrows.LowerKS
+5377|35091|8|9|0|int|3         //  UpperPools.UpperLeftKS
+5377|16426|8|9|0|int|3         //  UpperPools.UpperMidKS
+5377|46926|8|9|0|int|3         //  UpperPools.LowerKS
+5377|41881|8|9|0|int|3         //  UpperPools.UpperRightKS
+18793|1914|8|9|0|int|3         //  UpperDepths.RightEntryKS
+18793|58148|8|9|0|int|3        //  UpperDepths.LeftEntryKS
+18793|53953|8|9|0|int|3        //  UpperDepths.LeftHealthKS
+18793|23986|8|9|0|int|3        //  UpperDepths.RightHealthKS
+21786|22068|8|9|0|int|3        //  HowlsDen.AboveDoorKS
+21786|2852|8|9|0|int|3         //  HowlsDen.LaserKS
+21786|64677|8|9|0|int|3        //  MarshSpawn.CaveKS
+21786|27433|8|9|0|int|3        //  MarshPastOpher.LeftEyestone
+21786|37225|8|9|0|int|3        //  MarshPastOpher.RightEyestone
+58674|20713|8|9|0|int|3        //  WoodsMain.HiddenOre
+58674|26274|8|9|0|int|3        //  WoodsMain.BehindWallOre
+58674|28710|8|9|0|int|3        //  WoodsEntry.LedgeOre
+28895|23795|8|9|0|int|3        //  UpperReach.SoupOre
+28895|39291|8|9|0|int|3        //  UpperReach.TreeOre
+28895|58675|8|9|0|int|3        //  LowerReach.IcefallOre
+28895|47529|8|9|0|int|3        //  LowerReach.HiddenOre
+36153|3013|8|9|0|int|3         //  WeepingRidge.Ore
+7228|54494|8|9|0|int|3         //  LowerWastes.WestTPOre
+7228|8370|8|9|0|int|3          //  UpperWastes.WallOre
+42178|23125|8|9|0|int|3        //  GladesTown.LowerOre
+42178|27110|8|9|0|int|3        //  GladesTown.UpperOre
+9593|20382|8|9|0|int|3         //  MarshSpawn.BurrowOre
+9593|23858|8|9|0|int|3         //  MarshSpawn.CaveOre
+9593|25989|8|9|0|int|3         //  MarshPastOpher.TrialOre
+937|10729|8|9|0|int|3          //  EastHollow.GladesApproachOre
+937|6703|8|9|0|int|3           //  WestGlades.LeftOre
+937|11846|8|9|0|int|3          //  WestGlades.RightOre
+46462|37897|8|9|0|int|3        //  EastHollow.KwolokSwimOre
+5377|12235|8|9|0|int|3         //  EastPools.LupoOre
+5377|31434|8|9|0|int|3         //  UpperPools.FishPoolOre
+5377|65019|8|9|0|int|3         //  WestPools.BurrowOre
+5377|34852|8|9|0|int|3         //  EastPools.RightOre
+5377|19694|8|9|0|int|3         //  EastPools.AboveDoorOre
+18793|35351|8|9|0|int|3        //  UpperDepths.EntryOre
+18793|836|8|9|0|int|3          //  LowerDepths.BelowDoorOre
+21786|2046|8|9|0|int|3         //  HowlsDen.BoneOre
+21786|29892|8|9|0|int|3        //  MarshSpawn.ResilienceOre
+37858|32932|8|9|0|int|3        //  InnerWellspring.SwimOre
+37858|47533|8|9|0|int|3        //  InnerWellspring.RotateRoomOre
+37858|58286|8|9|0|int|3        //  OuterWellspring.TrialOre
+37858|58846|8|9|0|int|3        //  InnerWellspring.LaserOre
+53632|21124|8|9|0|int|3        //  OuterWellspring.SwimOre
+53632|25556|8|9|0|int|3        //  OuterWellspring.RightWallOre
+16155|38979|8|9|0|int|3        //  WillowsEnd.SpikesOre
+16155|9230|8|9|0|int|3         //  WillowsEnd.WindSpinOre
+20120|46919|8|9|0|int|3        //  LowerWastes.SandBridgeOre
+20120|40245|8|9|0|int|3        //  LowerWastes.EastTPOre
+58674|29265|8|9|0|int|3        //  WoodsMain.CombatShrine
+24922|13993|8|9|0|int|3        //  HowlsDen.CombatShrine
+18793|31937|8|9|0|int|3        //  LowerDepths.CombatShrine
+21786|18109|8|9|0|int|3        //  MarshPastOpher.CombatShrine
+44310|9902|8|9|0|int|3         //  WestGlades.CombatShrine
+14019|24142|8|9|0|int|3        //  InnerWellspring.BlueMoonSeed
+14019|28662|8|9|0|int|3        //  EastPools.GrassSeed
+14019|32376|8|9|0|int|3        //  UpperReach.SpringSeed
+14019|8192|8|9|0|int|3         //  UpperDepths.LightcatcherSeed
+14019|20601|8|9|0|int|3        //  UpperWastes.FlowersSeed
+23987|14832|8|9|0|int|3        //  GladesTown.TwillenGemQuest
+14019|15983=3|8|9|0|int|3      //  MarshSpawn.MokkFangQuest
+14019|20667=3|8|9|0|int|3      //  OuterWellspring.TheLostCompass
+48248|51645=3|8|9|0|int|3      //  MarshSpawn.TokkKeystoneQuest
+48248|18458=4|8|9|0|int|3      //  MarshSpawn.TokkTabletQuest
+14019|44578=2|8|9|0|int|3      //  GladesTown.RebuildTheGlades
+14019|26394=2|8|9|0|int|3      //  GladesTown.RegrowTheGlades
+14019|33776=3|8|9|0|int|3      //  GladesTown.MokiAcornQuest
+14019|50597=4|8|9|0|int|3      //  EastHollow.KwolokAmuletQuest
+937|34641=4|8|9|0|int|3        //  speaking to Kwolok after clean water
+
+// Trees
+0|120|2|120                          // AncestralLight from GladesTown.DamageTree
+0|120|8|9|0|int|1
+0|121|2|121                          // AncestralLight from MarshSpawn.DamageTree
+0|121|8|9|0|int|1
+0|0|8|9|9|int|0                      // Temp Bash from EastHollow.BashTree
+0|0|8|9|0|int|1
+0|101|8|9|9|int|101                  // Temp Burrow from LowerWastes.BurrowTree
+0|101|8|9|0|int|1
+0|102|8|9|9|int|102                  // Temp Dash from WestHollow.DashTree
+0|102|8|9|0|int|1
+0|5|8|9|9|int|5                      // Temp DoubleJump from HowlsDen.DoubleJumpTree
+0|5|8|9|0|int|1
+0|62|8|9|9|int|62                    // Temp Flash from LowerDepths.FlashTree
+0|62|8|9|0|int|1
+0|57|8|9|9|int|57                    // Temp Grapple from InnerWellspring.GrappleTree
+0|57|8|9|0|int|1
+0|8|8|9|9|int|8                      // Temp Launch from WeepingRidge.LaunchTree
+0|8|8|9|0|int|1
+0|51|8|9|9|int|51                    // Temp LightBurst from UpperReach.LightBurstTree
+0|51|8|9|0|int|1
+0|77|8|9|9|int|77                    // Temp Regenerate from MarshSpawn.RegenTree
+0|77|8|9|0|int|1
+0|97|8|9|9|int|97                    // Temp SpiritArc from MarshPastOpher.BowTree
+0|97|8|9|0|int|1
+0|100|8|9|9|int|100                  // Temp SpiritEdge from HowlsDen.SwordTree
+0|100|8|9|0|int|1
+0|104|8|9|9|int|104                  // Temp SwimDash from UpperPools.SwimDashTree
+0|104|8|9|0|int|1
+
+// Spirit Trials
+44964|23661=2|0|500               // Spirit Trials gives 500SL
+44964|23661=2|8|9|0|int|3
+44964|30767=2|0|500               // -
+44964|30767=2|8|9|0|int|3
+44964|45951=2|0|500               // -
+44964|45951=2|8|9|0|int|3
+44964|25545=2|0|500               // -
+44964|25545=2|8|9|0|int|3
+44964|54686=2|0|500               // -
+44964|54686=2|8|9|0|int|3
+44964|28552=2|0|500               // -
+44964|28552=2|8|9|0|int|3
+44964|22703=2|0|500               // -
+44964|22703=2|8|9|0|int|3
+44964|11512=2|0|500               // -
+44964|11512=2|8|9|0|int|3
+
+// Wisps
+46462|59806|8|9|0|int|4      // 5 Ores from EastHollow.ForestsVoice
+945|49747|8|9|0|int|4        // 5 Ores from WestPools.ForestsStrength
+28895|25522|8|9|0|int|4      // 5 Ores from LowerReach.ForestsMemory
+18793|63291|8|9|0|int|4      // 5 Ores from UpperDepths.ForestsEyes
+10289|22102|8|9|0|int|4      // 5 Ores from WindtornRuins.Seir
+
+//Clean Water
+37858|12379|9|0                    // Water from InnerWellspring.WaterEscape
+37858|12379|8|9|0|int|3
+
+//Hand to hand
+14019|26318=1|8|9|0|int|3    // EastHollow.HandToHandMap
+14019|26318=2|8|9|0|int|3    // GladesTown.HandToHandPouch
+14019|26318=6|8|9|0|int|3    // GladesTown.HandToHandLantern
+14019|26318=9|8|9|0|int|3    // GladesTown.HandToHandCanteen
+14019|26318=3|8|9|0|int|3    // InnerWellspring.HandToHandHerbs
+14019|26318=8|8|9|0|int|3    // EastPools.HandToHandSpyglass
+14019|26318=5|8|9|0|int|3    // LowerReach.HandToHandHat
+14019|26318=4|8|9|0|int|3    // LowerReach.HandToHandSoup
+14019|26318=7|8|9|0|int|3    // LowerDepths.HandToHandSilk
+14019|26318=10|8|9|0|int|3   // LowerWastes.HandToHandMapstone
+14019|26318=11|8|9|0|int|3   // WindtornRuins.HandToHandComplete
+14019|26318=11|8|9|113|bool|true
+14019|26318=11|8|9|0|int|12
+
+//// Twilen
+2|26|3|8     // Magnet from TwillenShop.Energy
+3|1|8|2|126|int|100
+3|1|17|0|2|26|shard:8
+2|22|3|41    // Spirit Surge from TwillenShop.Swap
+3|1|8|2|122|int|200
+3|1|17|0|2|22|shard:41
+2|3|3|13   // Reckless from TwillenShop.Wingclip
+3|1|8|2|103|int|200
+3|1|17|0|2|3|shard:13
+2|40|3|18   // Resilience from TwillenShop.Finesse
+3|1|8|2|140|int|200
+3|1|17|0|2|40|shard:18
+2|19|3|27   // Life Pact from TwillenShop.LightHarvest
+3|1|8|2|119|int|200
+3|1|17|0|2|19|shard:27
+2|1|3|1     // Overcharge from TwillenShop.Overcharge
+3|1|8|2|101|int|200
+3|1|17|0|2|1|shard:1
+2|5|3|44   // Deflector from TwillenShop.Vitality
+3|1|8|2|105|int|300
+3|1|17|0|2|5|shard:44
+2|2|3|2     // TripleJump from TwillenShop.TripleJump
+3|1|8|2|102|int|500
+3|1|17|0|2|2|shard:2
+
+//// Opher
+// Items
+1|116|8|9|120|bool|true            // Opher's advice
+1|116|8|9|0|int|13
+1|116|8|9|0|int|14
+1|1116|8|9|121|bool|true          // Spirit Light
+1|1116|8|9|0|int|13
+1|1116|8|9|0|int|15
+1|98|8|9|122|bool|true            // Unstability 1
+1|98|8|9|0|int|13
+1|98|8|9|0|int|16
+1|1098|8|9|123|bool|true         // Unstability 2
+1|1098|8|9|0|int|13
+1|1098|8|9|0|int|17
+1|106|8|9|124|bool|true           // Skills
+1|106|8|9|0|int|13
+1|106|8|9|0|int|18 
+1|1106|8|9|125|bool|true         // Trees
+1|1106|8|9|0|int|13
+1|1106|8|9|0|int|19
+1|74|8|9|126|bool|true           // Grom
+1|74|8|9|0|int|13
+1|74|8|9|0|int|20
+1|1074|8|9|127|bool|true        // Wisps
+1|1074|8|9|0|int|13
+1|1074|8|9|0|int|21
+1|115|8|9|128|bool|true         // Willow 
+1|115|8|9|0|int|13
+1|115|8|9|0|int|22
+1|1115|1|0                         // Health
+1|1115|8|1|1115|bool|false
+1|23|1|1                           // Energy
+1|23|8|1|23|bool|false
+1|105|1|3                          // Keystone
+1|105|8|1|105|bool|false
+// Prices
+3|1|8|1|10116|int|50
+3|1|8|1|11116|int|50
+3|1|8|1|10098|int|100
+3|1|8|1|11098|int|100
+3|1|8|1|10106|int|100
+3|1|8|1|11106|int|100
+3|1|8|1|10074|int|150
+3|1|8|1|11074|int|150
+3|1|8|1|10115|int|150
+3|1|8|1|11115|int|100
+3|1|8|1|10023|int|100
+3|1|8|1|10105|int|50
+// Icons
+3|1|17|0|1|116|file:assets/icons/game/message.png
+3|1|17|0|1|1116|file:assets/icons/game/message.png
+3|1|17|0|1|98|file:assets/icons/game/message.png
+3|1|17|0|1|1098|file:assets/icons/game/message.png
+3|1|17|0|1|106|file:assets/icons/game/message.png
+3|1|17|0|1|1106|file:assets/icons/game/message.png
+3|1|17|0|1|74|file:assets/icons/game/message.png
+3|1|17|0|1|1074|file:assets/icons/game/message.png
+3|1|17|0|1|115|file:assets/icons/game/message.png
+3|1|17|0|1|1115|file:assets/icons/game/healthfragment.png
+3|1|17|0|1|23|file:assets/icons/game/energyfragment.png
+3|1|17|0|1|105|file:assets/icons/game/keystone.png
+// Name
+3|1|17|1|1|116|Opher's advice
+3|1|17|1|1|1116|Spirit Light
+3|1|17|1|1|98|Unstability information 1
+3|1|17|1|1|1098|Unstability information 2
+3|1|17|1|1|106|Permanent skills
+3|1|17|1|1|1106|Spirit Trees
+3|1|17|1|1|74|Grom's wish
+3|1|17|1|1|1074|Wisps
+3|1|17|1|1|115|Willow
+// Description
+3|1|17|2|1|116|Page of Opher's journal.\nOpher have some advice for Ori.
+3|1|17|2|1|1116|Page of Opher's journal.\nOpher knows where to find loads of Spirit Light.
+3|1|17|2|1|98|Page of Opher's journal.\nInformation about how the instability works.
+3|1|17|2|1|1098|Page of Opher's journal.\nMore information about how the instability works.
+3|1|17|2|1|106|Page of Opher's journal.\nInformation about how to make skills permanent.
+3|1|17|2|1|1106|Page of Opher's journal.\nSome observation about Spirit Trees.
+3|1|17|2|1|74|Page of Opher's journal.\nInformation about a request from Grom.
+3|1|17|2|1|1074|Page of Opher's journal.\nObservation about Wisps.
+3|1|17|2|1|115|Page of Opher's journal.\nObservation about Willow.
+
+//// Grom
+// Item
+17|16825|8|9|111|bool|true   // 4th choice
+17|16825|8|9|113|bool|false
+17|16825|8|9|0|int|12
+17|51230|8|9|112|bool|true   // 4th ability
+17|51230|8|9|113|bool|false
+17|51230|8|9|0|int|12
+17|51230|8|9|0|int|23
+17|18751|8|9|130|bool|true   // Permanent burrow
+17|18751|8|9|113|bool|false
+17|18751|8|9|0|int|12
+17|18751|2|101|mute
+17|18751|6|Permanent $[2|101]
+17|23607|8|9|131|bool|true   // Permanent regen
+17|23607|8|9|113|bool|false
+17|23607|8|9|0|int|12
+17|23607|2|77|mute
+17|23607|6|Permanent $[2|77]
+17|16586|8|9|30|int|+1       // Reroll
+17|16586|6|Reroll ($(9|30) total)
+17|16586|8|17|16586|bool|false
+17|40448|8|9|31|int|+1       // Full reroll
+17|40448|6|Full Reroll ($(9|31) total)
+17|40448|8|17|40448|bool|false
+17|15068|0|1000              // SL
+17|15068|8|17|15068|bool|false
+// Icons
+3|1|17|0|17|16825|file:assets/unstable_plando/4.png
+3|1|17|0|17|51230|file:assets/unstable_plando/4ability.png
+3|1|17|0|17|23607|spell:2013
+3|1|17|0|17|40448|file:assets/unstable_plando/fullreroll.png
+3|1|17|0|17|18751|spell:3002
+3|1|17|0|17|16586|file:assets/unstable_plando/reroll.png
+3|1|17|0|17|15068|file:assets/icons/game/experience.png
+// Name
+3|1|17|1|17|16825|4th ability choice
+3|1|17|1|17|51230|4th ability slot
+3|1|17|1|17|23607|Permanent Regenerate
+3|1|17|1|17|40448|Full reroll
+3|1|17|1|17|18751|Permanent Burrow
+3|1|17|1|17|16586|Reroll
+3|1|17|1|17|15068|1000 Spirit Light
+// Description
+3|1|17|2|17|16825|Get a 4th choice when selecting an ability.
+3|1|17|2|17|51230|Get a 4th unstable ability.
+3|1|17|2|17|23607|You won't lose Regenerate anymore. 
+3|1|17|2|17|40448|Allows to reroll all your unstable abilities.\nUsable from the rando wheel.
+3|1|17|2|17|18751|You won't lose Burrow anymore. 
+3|1|17|2|17|16586|Allows to roll new ability choice..\nUsable from the rando wheel.
+3|1|17|2|17|15068|Sell one Gorlek Ore to Grom.
+// If Grom discount status changed, set the prices again
+9|113|8|9|0|int|12
+
+
+
+
+
+
+
+// TO DO:
+// - Add stats
+// - Get cutscene skips
+// - Check seed_core for stuffs
+// - Redo skill timers selection
+// - Make it impossible to roll the same skill twice
+// - Check syntax
+//   |_ Reroll -> single dice (reroll choice)
+//   |_ Ability reroll -> Full reroll (reroll your current abilities)
+//   |_ Unstable skill -> temp skill

@@ -1,0 +1,635 @@
+Flags: Plando, Unsafe, Wisps, You might want to reconsider
+
+// Config
+
+3|0|8|5|10|int|10                       // Start with 10 health
+3|0|8|5|11|int|10                       // -
+3|0|8|5|12|int|1                        // Start with 1 energy
+3|0|8|5|13|int|1                        // -
+3|0|8|4|3|float|0.5                     // Spear cost 1 energy
+3|0|8|7|22|bool|true                    // Shriek's health visible during the escape
+3|0|08|7|17|bool|true                   // Patch 2 knockback
+3|0|8|21|16825|bool|true                // Repair Glades TP
+3|0|8|7|18|bool|true                    // TP underwater
+3|0|8|7|19|bool|true                    // TP during combat
+3|0|8|48248|16489|int|1                 // TP anywhere
+3|0|8|6|402|bool|true                   // Drain Regen tree
+3|0|8|5377|14488|bool|true              // EastPools.EntryLever activated from the start
+3|0|8|28895|42209|bool|true             // Baur's arena start as completed
+3|0|8|36153|23584|bool|true             // Weeping Ridge's elevator start as completed
+3|0|8|21786|2869|bool|true              // Marsh shrine start as completed
+3|0|8|24922|45011|bool|true             // Howls shrine start as completed
+3|0|8|18793|12512|bool|true             // Depths shrine start as completed
+3|0|8|44310|58796|bool|true             // Glades shrine start as completed
+3|0|8|34543|30984|int|1                 // Force normal difficulty
+3|0|8|21786|47458|int|1                 // Remove Torch
+14019|50597|4|26|1|8|14019|50597|int|4  // Skip EastHollow.KwolokAmuletQuest after the amulet/Kwolok's fight
+3|0|8|21786|47445|bool|true             // Open HowlsDen Door to prevent a softlock
+3|0|8|21786|50432|bool|true             // Drain bow tree
+3|0|8|937|54318|bool|true               // Raise eyestone platform
+14019|35087=3|8|5|10|int|20             // Fix Kwolok not giving extra health
+14019|35087=3|8|5|12|int|2              // Fix Kwolok not giving extra energy
+28287|16339=1|8|5|11|float|230          // Refill on starting Reach escape
+28287|16339=1|8|5|13|float|23           // Refill on starting Reach escape
+
+/// Playthrough
+
+21786|60210|1|3                 // KS              from MarshSpawn.RockHC
+9593|5929|1|3                   // KS              from MarshSpawn.PreLupoEX
+0|77|2|104                      // Waterdash       from MarshSpawn.RegenTree
+0|100|8|6|401|bool|true         // Lift rain       from HowlsDen.SwordTree
+9593|5253|2|102                 // Dash            from MarshPastOpher.TrialLeftEX
+9593|23858|5|2                  // Pools TP        from MarshSpawn.CaveOre
+14019|53103|9|0                 // Water           from EastPools.KwolokAmuletQI
+21786|21727|2|74|mute//            Spear           from MarshSpawn.PoolsPathEX
+21786|21727|6|*Spear*\nIt feels easier to handle than normal
+945|49747|2|77                  // Regenerate      from WestPools.ForestsStrength
+21786|17920|2|5                 // Double Jump     from MarshSpawn.LeverEC
+9593|26457|8|9|10|int|+1        // Eyestone        from MarshPastOpher.PoolsPathEC
+24922|32076|8|9|10|int|+1       // Eyestone        from MarshSpawn.BurrowsApproachLedgeEX
+937|61897|1|0                   // Health Cell     from WestHollow.CrusherHC
+937|37926|5|17                  // Glades TP       from WestHollow.DashRightEX
+44310|36911|2|118               // Flap            from WestGlades.ShrineHC
+28895|50368|8|4|74|bool|true    // Melting Spear   from UpperReach.UpperKS
+28895|50368|6|#Melting Spear#   // -
+28895|53283|1|1                 // Energy          from LowerReach.RoofLeftEX
+28895|53283|1|1|mute//             -
+28895|25522|11|45               // Exploding Spear from LowerReach.ForestsMemory
+37858|12379|5|8                 // Woods Exit TP   from InnerWellspring.WaterEscape
+0|101|5|6                       // Depths TP       from LowerWastes.BurrowTree
+58674|29265|3|8                 // Magnet          from WoodsMain.CombatShrine
+18793|63291|2|101               // Burrow          from UpperDepths.ForestsEyes
+36153|36521|3|2                 // Triple Jump     from WeepingRidge.SpikeClimbEX
+16155|42976|8|9|104|bool|true   // Grapple shard   from WillowsEnd.GlideHeart
+16155|54940|8|9|104|bool|true   // Grapple shard   from WillowsEnd.SpinLasersHeart
+16155|24290|8|9|104|bool|true   // Grapple shard   from WillowsEnd.SpinPortalsHeart
+16155|28478|8|9|104|bool|true   // Grapple shard   from WillowsEnd.ElementalDefeated
+16155|65277|8|9|104|bool|true   // Grapple shard   from WillowsEnd.RedirectHeart
+16155|41488|8|9|104|bool|true   // Grapple shard   from WillowsEnd.TrapHeart
+16155|60752|8|9|104|bool|true   // Grapple shard   from WillowsEnd.GrappleWheelsHeart
+16155|3588|5|5                  // Hollows TP      from WillowsEnd.BurrowHeart
+46462|59806|5|14                // Ruins TP        from EastHollow.ForestsVoice
+10289|22102|8|9|12|int|3        // Ancestral Light from WindtornRuins.Seir
+10289|44555|3|13|mute//            Reckless        from WindtornRuins.EscapeRevisitEC
+10289|44555|0|1200|mute//          1200SL          from WindtornRuins.EscapeRevisitEC
+10289|44555|6|$Reckless$ + 1200SL\nYou should visit Twillen...
+
+/// Grapple shards
+
+9|104|4|17|9|104|1|8|9|11|int|+1
+9|104|4|17|9|104|1|4|19|9|11|7|6|*Grapple Fragments* ($(9|11)/7)
+9|104|4|17|9|104|1|8|9|104|bool|false
+9|11=7|2|57
+
+/// Hints
+
+3|1|16|0|0|1|Hints
+3|1|16|1|0|1|[Ability1]Display an hint
+3|1|16|2|0|1|file:assets/icons/wheel/quests_progress.png
+3|1|16|4|0|1|0|8|9|0|int|29
+3|4|8|9|0|int|29
+
+0|100|8|9|32|int|+1                      // Lift rain       from HowlsDen.SwordTree
+9593|23858|8|9|32|int|+1                 // Pools TP        from MarshSpawn.CaveOre
+21786|21727|8|9|32|int|+1                // Spear           from MarshSpawn.PoolsPathEX
+945|49747|8|9|32|int|+1                  // Regenerate      from WestPools.ForestsStrength
+21786|17920|4|17|9|10|2|8|9|32|int|+1    // Double Jump     from MarshSpawn.LeverEC
+9|10=2|4|17|21786|17920|1|8|9|32|int|+1  // Can open Kwolok statue once you collected both eyestones
+937|37926|8|9|32|int|+1                  // Glades TP       from WestHollow.DashRightEX
+44310|36911|8|9|32|int|+1                // Flap            from WestGlades.ShrineHC
+28895|53283|8|9|32|int|+1                // Energy          from LowerReach.RoofLeftEX
+28895|25522|8|9|32|int|+1                // Exploding Spear from LowerReach.ForestsMemory
+37858|12379|8|9|32|int|+1                // Woods Exit TP   from InnerWellspring.WaterEscape
+0|101|4|17|58674|29265|1|8|9|32|int|+1   // Depths TP       from LowerWastes.BurrowTree
+58674|29265|4|17|0|101|1|8|9|32|int|+1   // Magnet          from WoodsMain.CombatShrine
+18793|63291|8|9|32|int|+1                // Burrow          from UpperDepths.ForestsEyes
+16155|3588|8|9|32|int|+1                 // Hollows TP      from WillowsEnd.BurrowHeart
+10289|22102|8|9|32|int|+1                // Ancestral Light from WindtornRuins.Seir
+10289|44555|8|9|32|int|+1                // Reckless        from WindtornRuins.EscapeRevisitEC
+
+9|0=29|4|17|9|32|0|6|You should roam a bit in #Marsh#
+9|0=29|4|17|9|32|1|6|With the rain gone, #Marsh# is livier than ever!\nSurely some of your new friends can help you cleaning those branches.
+9|0=29|4|17|9|32|2|6|You sensed a @Wisp@ in #Pools#.\nYou better find a weapon near that area first.
+9|0=29|4|17|9|32|3|6|You sensed a @Wisp@ in #Pools#.\nYou feel confident in handling this.
+9|0=29|4|17|9|32|4|6|You feel stronger than before.\nIt might help you reach new places in #Marsh#.
+9|0=29|4|17|9|32|5|6|#Hollow#'s water look dangerous but you might have to deal with it nonetheless...
+9|0=29|4|17|9|32|6|6|Clearing #Glades# might help to reconsider your options.
+9|0=29|4|17|9|32|7|6|You sense a @Wisp@ in #Reach#.\nClearing this area should help you to reach it.
+9|0=29|4|17|9|32|8|6|You sense a @Wisp@ in #Reach#.\nClimbing the mountain looks difficult but you feel up for the challenge.
+9|0=29|4|17|9|32|9|6|Now that *Spear* can hit multiple enemies at once, you might be able to handle more combat gauntlet.
+9|0=29|4|17|9|32|10|6|#Woods Exit TP# opens a whole new area to explore!
+9|0=29|4|17|9|32|11|6|You sense a @Wisp@ in #Depths#.\nWhile scared, you feel prepared.
+9|0=29|4|17|9|32|12|6|#Willow# might not be the immediate end of your journey but it's calling for you.
+9|0=29|4|17|9|32|13|6|Restoring @Seir@ never felt this close!
+9|0=29|4|17|9|32|14|6|You're still missing a parting gift from the #Ruins#.
+9|0=29|4|17|9|32|15|6|There's only one way to end this journey.\nReturn to #Willow# once Twillen helped you preparing for this.
+9|0=29|8|9|0|int|0
+
+
+/// Ruins Escape
+
+10289|43103|8|9|12|int|1                                             // Trigger when breaking the pillar
+9|12=1|6|Something is sapping your strength...\n@Removed@ Double Jump, Spear, Dash
+9|12=1|2|-102|mute//                                                    Remove Dash
+9|12=1|2|-5|mute//                                                      Remove Djump
+9|12=1|2|-74|mute//                                                     Remove Spear
+9|12=3|6|Both #Ancestral Lights#\nYou regained your strength and more!  
+9|12=3|2|120|mute//                                                     Ancestral Light 
+9|12=3|2|121|mute//                                                     -
+9|12=3|2|102|mute//                                                     Dash 
+9|12=3|2|5|mute//                                                       Djump
+9|12=3|2|74|mute//                                                      Spear
+
+/// Wellspring escape
+
+37858|10720=1|8|34543|30984|int|2      // Switch to hard when starting the escape
+37858|10720=2|8|34543|30984|int|1      // Switch to Normal when finishing the escape
+37858|10720=2|8|37858|56444|bool|true  // Remove InnerWellspring.EscapeRevisitEX (used as a hint)
+
+/// Visual guides
+
+58674|32647|6|This Shrine's reward is more important than you might think
+
+
+/// Boss fights
+
+16155|47278=1|8|4|3|float|0          // Shriek makes Spear free
+16155|47278=1|6|Your Spear feels different...
+18793|26713=4|8|5|13|float|23        // Refill on Mora escape
+945|58403=3|8|9|22|int|1             // Kwolok trigger
+945|58403=6|8|9|22|int|2             // Kwolok defeated
+18793|26713=2|8|9|22|int|1           // Mora trigger
+18793|26713=7|8|9|22|int|2           // Mora defeated
+16155|12971=1|8|9|22|int|1           // Rock boss trigger
+16155|12971=4|8|9|22|int|2           // Rock boss defeated
+16155|47278=1|8|4|3|float|0          // Shriek makes Spear free
+16155|47278=1|6|Your Spear feels different...
+
+
+9|22=1|8|4|31|int|10
+9|22=1|6|You feel energized\n*Energy Regeneration*
+9|22=2|8|4|31|int|0
+9|22=2|6|You calmed down\n@Remove@ Energy Regeneration
+
+
+/// Set every irrelevant pickups as collected
+
+3|0|8|18793|42235|bool|true        //  UpperDepths.KeystoneHC
+3|0|8|58674|20983|bool|true        //  EastHollow.RightKwolokEX
+3|0|8|58674|64057|bool|true        //  WoodsMain.BehindDoorRoofEX
+3|0|8|58674|30908|bool|true        //  WoodsMain.UpperLeafPileEX
+3|0|8|58674|59714|bool|true        //  WoodsMain.YellowWallEX
+3|0|8|58674|54516|bool|true        //  WoodsMain.HiddenEX
+3|0|8|28895|22761|bool|true        //  LowerReach.TrialEX
+3|0|8|28895|3777|bool|true         //  LowerReach.AboveBaurUpperEX
+3|0|8|28895|38049|bool|true        //  LowerReach.BelowLupoEX
+3|0|8|28895|40089|bool|true        //  UpperReach.SwingPoleEX
+3|0|8|28895|36231|bool|true        //  LowerReach.TPLeftEX
+3|0|8|28895|40242|bool|true        //  UpperReach.SwimEX
+3|0|8|28895|4301|bool|true         //  LowerReach.MeltIceEX
+3|0|8|7228|56821|bool|true         //  LowerWastes.PurpleWallEX
+3|0|8|7228|52086|bool|true         //  LowerWastes.SunsetViewEX
+3|0|8|7228|35329|bool|true         //  UpperWastes.KSDoorEX
+3|0|8|7228|61548|bool|true         //  UpperWastes.SpinLasersLowerEX
+3|0|8|7228|48993|bool|true         //  UpperWastes.SpinLasersMiddleEX
+3|0|8|21786|50255|bool|true        //  MarshPastOpher.CeilingEX
+3|0|8|42178|51468|bool|true        //  GladesTown.LupoSoupEX
+3|0|8|42178|13327|bool|true        //  GladesTown.BraveMokiHutEX
+3|0|8|42178|57455|bool|true        //  GladesTown.MotayHutEX
+3|0|8|42178|30520|bool|true        //  GladesTown.HoleHutEX
+3|0|8|42178|51934|bool|true        //  GladesTown.KeyMokiHutEX
+3|0|8|42178|59623|bool|true        //  GladesTown.UpperLeftEX
+3|0|8|42178|9780|bool|true         //  GladesTown.LupoSwimMiddleEX
+3|0|8|42178|18448|bool|true        //  GladesTown.CaveBurrowEX
+3|0|8|42178|6117|bool|true         //  GladesTown.BelowHoleHutEX
+3|0|8|937|45987|bool|true          //  EastHollow.SecretRoofEX
+3|0|8|937|30182|bool|true          //  EastHollow.BashEX
+3|0|8|937|45744|bool|true          //  WestGlades.UpperPoolEX
+3|0|8|937|19529|bool|true          //  EastHollow.MortarEX
+3|0|8|937|31036|bool|true          //  WestGlades.AbovePlantEX
+3|0|8|945|58723|bool|true          //  PoolsApproach.MillPathEX
+3|0|8|945|14530|bool|true          //  PoolsApproach.AboveWheelEX
+3|0|8|37858|56444|bool|true        //  InnerWellspring.EscapeRevisitEX
+3|0|8|945|10682|bool|true          //  PoolsApproach.CurrentEX
+3|0|8|5377|18345|bool|true         //  EastPools.BehindCrusherEX
+3|0|8|5377|21860|bool|true         //  UpperPools.RightBubblesEX
+3|0|8|5377|27204|bool|true         //  EastPools.BelowLeverEX
+3|0|8|5377|33180|bool|true         //  UpperPools.RoofEX
+3|0|8|5377|44122|bool|true         //  WestPools.EscapeRevisitEX
+3|0|8|5377|7540|bool|true          //  EastPools.AboveTpEX
+3|0|8|5377|35440|bool|true         //  EastPools.LupoEX
+3|0|8|5377|52791|bool|true         //  UpperPools.CurrentEX
+3|0|8|5377|17396|bool|true         //  EastPools.CurrentEX
+3|0|8|5377|13832|bool|true         //  EastPools.TwoCrushersEX
+3|0|8|18793|29979|bool|true        //  UpperDepths.TeleporterEX
+3|0|8|18793|2881|bool|true         //  LowerDepths.LeftEX
+3|0|8|18793|6573|bool|true         //  UpperDepths.HiveEX
+3|0|8|18793|19004|bool|true        //  UpperDepths.EntrySpikesEX
+3|0|8|18793|42980|bool|true        //  EastHollow.DepthsExteriorEX
+3|0|8|18793|15396|bool|true        //  UpperDepths.EntryRoofEX
+3|0|8|21786|10413|bool|true        //  MarshPastOpher.TrialRightEX
+3|0|8|21786|23154|bool|true        //  MarshSpawn.LongSwimEX
+3|0|8|37858|22107|bool|true        //  InnerWellspring.ThornEX
+3|0|8|37858|31136|bool|true        //  InnerWellspring.GrappleTreeEX
+3|0|8|37858|41380|bool|true        //  InnerWellspring.DrainEX
+3|0|8|37858|59022|bool|true        //  InnerWellspring.LibraryEX
+3|0|8|37858|41911|bool|true        //  InnerWellspring.LupoEX
+3|0|8|37858|52110|bool|true        //  InnerWellspring.RotateRoomEX
+3|0|8|37858|45656|bool|true        //  InnerWellspring.WaterSwitchEX
+3|0|8|53632|12019|bool|true        //  WestGlades.GrappleEX
+3|0|8|53632|62356|bool|true        //  OuterWellspring.SwimEX
+3|0|8|53632|51706|bool|true        //  OuterWellspring.RightWallEX
+3|0|8|53632|42264|bool|true        //  OuterWellspring.EntranceRoofEX
+3|0|8|53632|6500|bool|true         //  OuterWellspring.WheelEX
+3|0|8|20120|48829|bool|true        //  LowerWastes.UpperPathEX
+3|0|8|20120|52812|bool|true        //  UpperWastes.PurpleWallEX
+3|0|8|20120|30740|bool|true        //  UpperWastes.MissileSpawnEX
+3|0|8|20120|8910|bool|true         //  LowerWastes.SkeetoHiveEX
+3|0|8|20120|10397|bool|true        //  LowerWastes.MuncherPitEX
+3|0|8|20120|19113|bool|true        //  LowerWastes.BurrowTreeEX
+3|0|8|20120|57781|bool|true        //  LowerWastes.SandPotEX
+3|0|8|20120|2013|bool|true         //  UpperWastes.RoofEX
+3|0|8|28287|32414|bool|true        //  UpperReach.LifeForceEX
+3|0|8|58674|64484|bool|true        //  WoodsMain.FeedingGroundsEX
+3|0|8|28895|2129|bool|true         //  UpperReach.HiddenEX
+3|0|8|28895|45337|bool|true        //  LowerReach.IcefallEX
+3|0|8|28895|46404|bool|true        //  LowerReach.EscapeRevisitEX
+3|0|8|36153|23902|bool|true        //  WillowsEnd.UpperLeftEX
+3|0|8|36153|3662|bool|true         //  WillowsEnd.UpperRightEX
+3|0|8|36153|12077|bool|true        //  WeepingRidge.PortalEX
+3|0|8|7228|54275|bool|true         //  UpperWastes.SpinLasersRightEX
+3|0|8|24922|62138|bool|true        //  MarshSpawn.CrusherSwimEX
+3|0|8|42178|40609|bool|true        //  LowerReach.BreakWallEX
+3|0|8|937|50176|bool|true          //  WestHollow.CrusherEX
+3|0|8|46462|29054|bool|true        //  EastHollow.KwolokSwimLeftEX
+3|0|8|945|10833|bool|true          //  MarshPastOpher.PoolsPathEX
+3|0|8|5377|628|bool|true           //  UpperPools.LeftBubblesEX
+3|0|8|5377|62180|bool|true         //  WestPools.BurrowEX
+3|0|8|18793|23799|bool|true        //  LowerDepths.RightEX
+3|0|8|18793|18395|bool|true        //  UpperDepths.BossPathEX
+3|0|8|37858|64086|bool|true        //  InnerWellspring.AboveSpinArenaEX
+3|0|8|37858|33063|bool|true        //  InnerWellspring.ShortcutWheelEX
+3|0|8|16155|49381|bool|true        //  WillowsEnd.EntryEX
+3|0|8|16155|55446|bool|true        //  WillowsEnd.RedirectEX
+3|0|8|20120|224|bool|true          //  LowerWastes.BottomRightEX
+3|0|8|20120|33275|bool|true        //  LowerWastes.LastStandEX
+3|0|8|20120|17798|bool|true        //  LowerWastes.UpperPathHiddenEX
+3|0|8|58674|59691|bool|true        //  WoodsEntry.TpEX
+3|0|8|58674|8487|bool|true         //  WoodsEntry.MudPitEX
+3|0|8|58674|23186|bool|true        //  WoodsMain.BelowKeystonesEX
+3|0|8|58674|42158|bool|true        //  WoodsMain.LowerLeafPileEX
+3|0|8|58674|33893|bool|true        //  WoodsMain.MiddleLeafPileEX
+3|0|8|58674|17974|bool|true        //  WoodsMain.PetrifiedHowlEX
+3|0|8|58674|22472|bool|true        //  WoodsEntry.LeafPileEX
+3|0|8|28895|7597|bool|true         //  UpperReach.WellEX
+3|0|8|28895|54373|bool|true        //  LowerReach.WindHiddenEX
+3|0|8|28895|55384|bool|true        //  LowerReach.BelowBaurEX
+3|0|8|28895|24533|bool|true        //  LowerReach.AboveBaurLowerEX
+3|0|8|28895|35045|bool|true        //  LowerReach.WindBottomEX
+3|0|8|28895|38143|bool|true        //  LowerReach.AboveDoorEX
+3|0|8|28895|46711|bool|true        //  LowerReach.RoofRightEX
+3|0|8|28895|45066|bool|true        //  LowerReach.BurrowEX
+3|0|8|42178|30206|bool|true        //  GladesTown.AboveCaveEX
+3|0|8|42178|37028|bool|true        //  GladesTown.LupoSwimLeftEX
+3|0|8|42178|63404|bool|true        //  GladesTown.UpdraftCeilingEX
+3|0|8|42178|44748|bool|true        //  GladesTown.LeafPileEX
+3|0|8|42178|42762|bool|true        //  GladesTown.AboveTpEX
+3|0|8|9593|17818|bool|true         //  HowlsDen.DoubleJumpEX
+3|0|8|9593|59344|bool|true         //  MarshPastOpher.SwingPoleEX
+3|0|8|9593|42047|bool|true         //  MarshSpawn.FightRoomEX
+3|0|8|937|40657|bool|true          //  WestGlades.LowerPoolEX
+3|0|8|937|16163|bool|true          //  WestHollow.FarLeftEX
+3|0|8|937|2538|bool|true           //  WestHollow.RockPuzzleEX
+3|0|8|937|48192|bool|true          //  WestHollow.BelowLupoEX
+3|0|8|937|61744|bool|true          //  WestHollow.AboveDashEX
+3|0|8|937|13413|bool|true          //  EastHollow.HornBeetleFightEX
+3|0|8|937|5568|bool|true           //  EastHollow.SpikeLanternEX
+3|0|8|46462|20780|bool|true        //  EastHollow.KwolokSwimRightEX
+3|0|8|5377|33110|bool|true         //  UpperPools.FishPoolEX
+3|0|8|5377|25391|bool|true         //  WestPools.TpEX
+3|0|8|21786|59513|bool|true        //  MarshSpawn.LeftTokkEX
+3|0|8|21786|49485|bool|true        //  MarshSpawn.FirstPickupEX
+3|0|8|21786|6987|bool|true         //  MarshSpawn.BridgeEX
+3|0|8|21786|43668|bool|true        //  HowlsDen.UpperEX
+3|0|8|21786|16206|bool|true        //  HowlsDen.AboveTPEX
+3|0|8|37858|45906|bool|true        //  InnerWellspring.ThreeWheelsEX
+3|0|8|37858|2797|bool|true         //  InnerWellspring.AboveTpEX
+3|0|8|20120|57133|bool|true        //  LowerWastes.MuncherClimbEX
+3|0|8|23987|23015|bool|true        // GladesTown.ArcingShard
+3|0|8|23987|14014|bool|true        // GladesTown.BountyShard
+3|0|8|23987|897|bool|true          // LowerReach.CatalystShard
+3|0|8|24922|46311|bool|true        // MidnightBurrows.DeflectorShard
+3|0|8|5377|40328|bool|true         // EastPools.EnergyHarvestShard
+3|0|8|23987|36359|bool|true        // LowerReach.FractureShard
+3|0|8|23987|50364|bool|true        // LowerWastes.LastStandShard
+3|0|8|23987|19630|bool|true        // UpperReach.LifeForceShard
+3|0|8|23987|53934|bool|true        // OuterWellspring.LifeHarvestShard
+3|0|8|23987|50415|bool|true        // MarshSpawn.LifepactShard
+3|0|8|21786|63545|bool|true        // HowlsDen.MagnetShard
+3|0|8|23987|25183|bool|true        // WoodsMain.OverflowShard
+3|0|8|23987|61017|bool|true        // WestHollow.QuickshotShard
+3|0|8|23987|9864|bool|true         // MarshSpawn.RecklessShard
+3|0|8|23987|59173|bool|true        // MarshSpawn.ResilienceShard
+3|0|8|23987|986|bool|true          // LowerDepths.SpiritSurgeShard
+3|0|8|23987|62973|bool|true        // EastHollow.SplinterShard
+3|0|8|23987|27134|bool|true        // HowlsDen.StickyShard
+3|0|8|23987|31426|bool|true        // InnerWellspring.ThornShard
+3|0|8|23987|48605|bool|true        // UpperWastes.TurmoilShard
+3|0|8|23987|25996|bool|true        // EastPools.UltraBashShard
+3|0|8|23987|12104|bool|true        // OuterWellspring.UltraGrappleShard
+3|0|8|0|120|bool|true              // GladesTown.DamageTree
+3|0|8|0|121|bool|true              // MarshSpawn.DamageTree
+3|0|8|0|0|bool|true                // EastHollow.BashTree
+3|0|8|0|102|bool|true              // WestHollow.DashTree
+3|0|8|0|5|bool|true                // HowlsDen.DoubleJumpTree
+3|0|8|0|62|bool|true               // LowerDepths.FlashTree
+3|0|8|0|57|bool|true               // InnerWellspring.GrappleTree
+3|0|8|0|8|bool|true                // WeepingRidge.LaunchTree
+3|0|8|0|51|bool|true               // UpperReach.LightBurstTree
+3|0|8|0|97|bool|true               // MarshPastOpher.BowTree
+3|0|8|0|104|bool|true              // UpperPools.SwimDashTree
+3|0|8|13428|59730|bool|true        // EastHollow.BashHC
+3|0|8|28895|40744|bool|true        // LowerReach.SnowballHC
+3|0|8|9593|61304|bool|true         // HowlsDen.LeftHC
+3|0|8|937|2463|bool|true           // WestHollow.TrialHC
+3|0|8|945|37243|bool|true          // PoolsApproach.MillPathHC
+3|0|8|5377|45774|bool|true         // EastPools.FightRoomHC
+3|0|8|5377|63201|bool|true         // EastPools.PurpleWallHC
+3|0|8|18793|62694|bool|true        // LowerDepths.RaceStartHC
+3|0|8|21786|28908|bool|true        // HowlsDen.RightHC
+3|0|8|21786|25761|bool|true        // MarshSpawn.GrappleHC
+3|0|8|21786|20194|bool|true        // MarshPastOpher.TrialHC
+3|0|8|37858|25833|bool|true        // InnerWellspring.DrainHC
+3|0|8|44310|29043|bool|true        // GladesTown.AboveGromHC
+3|0|8|44310|17523|bool|true        // GladesTown.LupoSwimHC
+3|0|8|53632|17403|bool|true        // OuterWellspring.HiddenHC
+3|0|8|16155|46270|bool|true        // WillowsEnd.PoisonfallHC
+3|0|8|20120|59046|bool|true        // LowerWastes.UpperPathHC
+3|0|8|20120|12941|bool|true        // LowerWastes.BottomRightHC
+3|0|8|20120|62264|bool|true        // LowerWastes.SandPotHC
+3|0|8|20120|18965|bool|true        // UpperWastes.PurpleWallHC
+3|0|8|58674|9583|bool|true         // EastHollow.SilentSwimEC
+3|0|8|42178|52786|bool|true        // GladesTown.HoleHutEC
+3|0|8|9593|27562|bool|true         // MarshPastOpher.TrialEC
+3|0|8|937|17761|bool|true          // WestGlades.SwimEC
+3|0|8|937|23772|bool|true          // EastHollow.BashEC
+3|0|8|937|24175|bool|true          // WestHollow.SwimEC
+3|0|8|937|8518|bool|true           // WestHollow.HiddenEC
+3|0|8|945|21334|bool|true          // PoolsApproach.MillPathEC
+3|0|8|5377|1600|bool|true          // UpperPools.BubblesEC
+3|0|8|5377|32750|bool|true         // UpperPools.WaterfallEC
+3|0|8|18793|26618|bool|true        // UpperDepths.SwimEC
+3|0|8|18793|28175|bool|true        // LowerDepths.SwimEC
+3|0|8|21786|10295|bool|true        // MarshPastOpher.BowEC
+3|0|8|21786|61706|bool|true        // MarshSpawn.FangEC
+3|0|8|21786|7152|bool|true         // MarshSpawn.BashEC
+3|0|8|37858|57552|bool|true        // InnerWellspring.LeverEC
+3|0|8|53632|1911|bool|true         // OuterWellspring.RightWallEC
+3|0|8|53632|6869|bool|true         // OuterWellspring.BasementEC
+3|0|8|20120|50026|bool|true        // LowerWastes.UpperPathEC
+3|0|8|20120|11785|bool|true        // LowerWastes.MuncherTunnelEC
+3|0|8|20120|22354|bool|true        // UpperWastes.LedgeEC
+3|0|8|58674|42531|bool|true        // WoodsMain.LeftKS
+3|0|8|58674|19769|bool|true        // WoodsMain.UpperKS
+3|0|8|58674|11736|bool|true        // WoodsEntry.UpperKS
+3|0|8|58674|43033|bool|true        // WoodsMain.RightKS
+3|0|8|58674|40073|bool|true        // WoodsEntry.LowerKS
+3|0|8|58674|780|bool|true          // WoodsMain.LowerKS
+3|0|8|28895|22382|bool|true        // UpperReach.MiddleLeftKS
+3|0|8|28895|29898|bool|true        // LowerReach.RightKS
+3|0|8|28895|1053|bool|true         // UpperReach.LowerKS
+3|0|8|28895|37444|bool|true        // LowerReach.MiddleLeftKS
+3|0|8|28895|10823|bool|true        // LowerReach.UpperLeftKS
+3|0|8|28895|9949|bool|true         // UpperReach.MiddleRightKS
+3|0|8|28895|18358|bool|true        // LowerReach.BottomLeftKS
+3|0|8|7228|20282|bool|true         // UpperWastes.LowerKS
+3|0|8|7228|62117|bool|true         // UpperWastes.UpperKS
+3|0|8|24922|34250|bool|true        // MidnightBurrows.UpperKS
+3|0|8|24922|47244|bool|true        // MidnightBurrows.RightKS
+3|0|8|24922|60358|bool|true        // MidnightBurrows.LeftKS
+3|0|8|24922|33535|bool|true        // MidnightBurrows.LowerKS
+3|0|8|5377|35091|bool|true         // UpperPools.UpperLeftKS
+3|0|8|5377|16426|bool|true         // UpperPools.UpperMidKS
+3|0|8|5377|46926|bool|true         // UpperPools.LowerKS
+3|0|8|5377|41881|bool|true         // UpperPools.UpperRightKS
+3|0|8|18793|1914|bool|true         // UpperDepths.RightEntryKS
+3|0|8|18793|58148|bool|true        // UpperDepths.LeftEntryKS
+3|0|8|18793|53953|bool|true        // UpperDepths.LeftHealthKS
+3|0|8|18793|23986|bool|true        // UpperDepths.RightHealthKS
+3|0|8|21786|22068|bool|true        // HowlsDen.AboveDoorKS
+3|0|8|21786|2852|bool|true         // HowlsDen.LaserKS
+3|0|8|21786|64677|bool|true        // MarshSpawn.CaveKS
+3|0|8|21786|27433|bool|true        // MarshPastOpher.LeftEyestone
+3|0|8|21786|37225|bool|true        // MarshPastOpher.RightEyestone
+3|0|8|58674|20713|bool|true        // WoodsMain.HiddenOre
+3|0|8|58674|26274|bool|true        // WoodsMain.BehindWallOre
+3|0|8|58674|28710|bool|true        // WoodsEntry.LedgeOre
+3|0|8|28895|23795|bool|true        // UpperReach.SoupOre
+3|0|8|28895|39291|bool|true        // UpperReach.TreeOre
+3|0|8|28895|58675|bool|true        // LowerReach.IcefallOre
+3|0|8|28895|47529|bool|true        // LowerReach.HiddenOre
+3|0|8|36153|3013|bool|true         // WeepingRidge.Ore
+3|0|8|7228|54494|bool|true         // LowerWastes.WestTPOre
+3|0|8|7228|8370|bool|true          // UpperWastes.WallOre
+3|0|8|42178|23125|bool|true        // GladesTown.LowerOre
+3|0|8|42178|27110|bool|true        // GladesTown.UpperOre
+3|0|8|9593|20382|bool|true         // MarshSpawn.BurrowOre
+3|0|8|9593|25989|bool|true         // MarshPastOpher.TrialOre
+3|0|8|937|10729|bool|true          // EastHollow.GladesApproachOre
+3|0|8|937|6703|bool|true           // WestGlades.LeftOre
+3|0|8|937|11846|bool|true          // WestGlades.RightOre
+3|0|8|46462|37897|bool|true        // EastHollow.KwolokSwimOre
+3|0|8|5377|12235|bool|true         // EastPools.LupoOre
+3|0|8|5377|31434|bool|true         // UpperPools.FishPoolOre
+3|0|8|5377|65019|bool|true         // WestPools.BurrowOre
+3|0|8|5377|34852|bool|true         // EastPools.RightOre
+3|0|8|5377|19694|bool|true         // EastPools.AboveDoorOre
+3|0|8|18793|35351|bool|true        // UpperDepths.EntryOre
+3|0|8|18793|836|bool|true          // LowerDepths.BelowDoorOre
+3|0|8|21786|2046|bool|true         // HowlsDen.BoneOre
+3|0|8|21786|29892|bool|true        // MarshSpawn.ResilienceOre
+3|0|8|37858|32932|bool|true        // InnerWellspring.SwimOre
+3|0|8|37858|47533|bool|true        // InnerWellspring.RotateRoomOre
+3|0|8|37858|58286|bool|true        // OuterWellspring.TrialOre
+3|0|8|37858|58846|bool|true        // InnerWellspring.LaserOre
+3|0|8|53632|21124|bool|true        // OuterWellspring.SwimOre
+3|0|8|53632|25556|bool|true        // OuterWellspring.RightWallOre
+3|0|8|16155|38979|bool|true        // WillowsEnd.SpikesOre
+3|0|8|16155|9230|bool|true         // WillowsEnd.WindSpinOre
+3|0|8|20120|46919|bool|true        // LowerWastes.SandBridgeOre
+3|0|8|20120|40245|bool|true        // LowerWastes.EastTPOre
+3|0|8|24922|13993|bool|true        // Shard Slot HowlsDen.CombatShrine
+3|0|8|18793|31937|bool|true        // Shard Slot LowerDepths.CombatShrine
+3|0|8|21786|18109|bool|true        // Shard Slot MarshPastOpher.CombatShrine
+3|0|8|44310|9902|bool|true         // Shard Slot WestGlades.CombatShrine
+3|0|8|14019|24142|bool|true	       // InnerWellspring.BlueMoonSeed
+3|0|8|14019|28662|bool|true        // EastPools.GrassSeed
+3|0|8|14019|7470|bool|true         // WoodsEntry.TreeSeed
+3|0|8|14019|32376|bool|true        // UpperReach.SpringSeed
+3|0|8|14019|8192|bool|true         // UpperDepths.LightcatcherSeed
+3|0|8|14019|20601|bool|true        // UpperWastes.FlowersSeed
+3|0|8|44964|45951|int|2            // Trial Inkwater Marsh
+3|0|8|44964|25545|int|2            // Trial Kwolok's Hollow
+3|0|8|44964|11512|int|2            // Trial The Wellspring
+3|0|8|44964|54686|int|2            // Trial Luma Pools
+3|0|8|44964|22703|int|2            // Trial Silent Woods
+3|0|8|44964|23661|int|2            // Trial Baur's Reach
+3|0|8|44964|28552|int|2            // Trial Mouldwood Depths
+3|0|8|44964|30767|int|2            // Trial Windswept Wastes
+3|0|7|48248|18767|bool|true        // MarshSpawn.LupoMap
+3|0|7|48248|45538|bool|true        // MidnightBurrows.LupoMap
+3|0|7|48248|3638|bool|true         // WestHollow.LupoMap
+3|0|7|48248|1590|bool|true         // InnerWellspring.LupoMap
+3|0|7|48248|1557|bool|true         // EastPools.LupoMap
+3|0|7|48248|29604|bool|true        // LowerReach.LupoMap
+3|0|7|48248|48423|bool|true        // LowerDepths.LupoMap
+3|0|7|48248|61146|bool|true        // LowerWastes.LupoMap
+3|0|7|48248|4045|bool|true         // WillowsEnd.LupoMap
+3|0|8|53632|41227|bool|true        // OuterWellspring.TheLostCompass
+3|0|8|14019|52747|bool|true        // MarshSpawn.TokkTabletQuest
+3|0|8|14019|27539|bool|true        // MarshSpawn.FangQI
+
+/// Eyestones
+
+3|0|4|7|0|0                // Can't oppen the Kwolok's statue by default
+9|10=2|4|7|0|1             // Can open Kwolok statue once you collected both eyestones
+9|10|6|Eyestone
+9|10|1|3|mute
+
+/// TP Refill
+
+3|20|8|5|11|float|230
+3|20|8|5|13|float|23
+
+/// No quests
+
+// Block quest item placements
+3|0|8|48248|51645|int|3                     // MarshSpawn.TokkKeystoneQuest
+3|0|8|14019|15983|int|3                     // MarshSpawn.MokkFangQuest
+3|0|8|48248|18458|int|4                     // MarshSpawn.TokkTabletQuest
+3|0|8|937|36461|int|4                       // EastHollow.WellspringDoneTalk
+3|0|8|14019|20667|int|3                     // OuterWellspring.TheLostCompass
+3|0|8|14019|59708|int|3                     // Tree Keeper (WoodsEntry.LastTreeBranch)
+3|0|8|14019|7470|bool|true                  // WoodsEntry.TreeSeed
+3|0|8|14019|58342|bool|true                 // LowerWastes.EerieGemQI
+3|0|8|23987|14832|bool|true                 // GladesTown.TwillenGemQuest
+3|0|4|19|14019|27804|2|8|14019|27804|int|2  // GladesTown.FamilyReunionKey
+3|0|8|14019|33776|int|3                     // GladesTown.MokiAcornQuest
+3|0|8|14019|44578|int|2                     // GladesTown.RebuildTheGlades
+3|0|8|14019|26394|int|2                     // GladesTown.RegrowTheGlades
+3|0|8|14019|26318|int|11                    // Hand to Hand (EastHollow.HandToHandMap, GladesTown.HandToHandPouch, InnerWellspring.HandToHandHerbs, LowerReach.HandToHandSoup, LowerReach.HandToHandHat, GladesTown.HandToHandLantern, LowerDepths.HandToHandSilk, EastPools.HandToHandSpyglass, GladesTown.HandToHandCanteen, LowerWastes.HandToHandMapstone, WindtornRuins.HandToHandComplete)
+// Reveal items behind quests
+3|0|8|42178|40006|byte|3                    // Planting the Last Tree
+3|0|8|58674|14313|bool|true                 // Family Murder -> Doll
+21|51230|8|42178|36609|bool|true            // Family Murder -> SL inside father hut
+// Quests that just kind of exist
+3|0|8|14019|61011|int|5                     // A Diamond in the Rough
+3|0|8|14019|27804|int|4                     // Family Murder
+
+/// Seedcore
+3|0|8|14019|8973|int|1
+3|0|8|14019|35087|int|1
+3|0|8|14019|35399|int|1
+3|0|8|14019|45931|int|1
+3|0|8|14019|34504|int|4
+
+/// No cutscenes
+// Static cutscene skips
+3|0|8|7|20|bool|true                        // Willow Hearts 
+3|0|8|11666|4220|bool|true                  // howlsDenGRoup.hasOriUsedSavePedestal
+3|0|8|58674|41644|bool|true                 // _petrifiedForestGroup.mokiFoulWaterVignetteTriggered
+3|0|8|58674|37811|bool|true                 // _petrifiedForestGroup.mokiCleanWaterVignetteTriggered
+3|0|8|5377|35023|bool|true                  // lumaPoolsStateGroup.playedMokiVignette
+3|0|8|48248|3846|bool|true                  // npcsStateGroup.stenchTease
+3|0|8|945|9367|bool|true                    // lagoonStateGroup.wispSequencePlayedOut
+3|0|8|48248|40451|bool|true                 // npcsStateGroup.baurReachWispIntro
+3|0|8|48248|37364|bool|true                 // npcsStateGroup.mouldwoodDepthsWisptIntro
+3|0|8|20120|55196|bool|true                 // windsweptWastesGroupDescriptor.wispSequencePlayedOut
+3|0|8|24922|45740|bool|true                 // howlsOriginGroup.interactedWithTokk
+3|0|8|37858|25031|bool|true                 // waterMillStateGroupDescriptor.rescuedOpher
+3|0|8|5377|21700|bool|true                  // lumaPoolsStateGroup.talkedToKwolok
+3|0|4|19|14019|48794|1|8|14019|48794|int|1  // questUberStateGroup.findToadQuestUberState
+3|0|4|19|937|34641|2|8|937|34641|int|2      // kwolokGroupDescriptor.cleanseWellspringQuestUberState
+3|0|8|10289|3621|bool|true                  // windtornRuinsGroup.ruinsVisited
+3|0|8|21786|51018|bool|true                 // swampStateGroup.powlTeaseTriggered
+3|0|8|28895|2108|bool|true                  // baursReachGroup.powlTeaseTriggered
+3|0|8|37858|23225|bool|true                 // waterMillStateGroupDescriptor.playedNaruGumoCutaway
+3|0|8|16155|32922|bool|true                 // willowsEndGroup.introPlayed
+3|0|8|31136|3441|bool|true                  // weepingRidgeElevatorFightGroup.willowsEndGateOpened
+3|0|8|7|20|bool|true                        // randoConfig.disableWillowHeartCutscenes
+// Dialogue skips
+3|0|8|48248|5982|bool|true                  // npcsStateGroup.metOpherHubAfterWatermill
+3|0|8|48248|55122|bool|true                 // npcsStateGroup.metOpherHubBeforeWatermill
+3|0|8|48248|46745|bool|true                 // npcsStateGroup.opherMentiodedWatermill
+3|0|8|48248|25267|int|2                     // npcsStateGroup.twillenKwolokDialogState
+3|0|8|48248|12799|int|3                     // npcsStateGroup.twillenHubDialogState
+3|0|8|48248|34756|bool|true                 // npcsStateGroup.twillenMournedKu
+3|0|8|48248|6194|bool|true                  // npcsStateGroup.twillenGaveRumor
+3|0|8|48248|9394|bool|true                  // npcsStateGroup.metGrom
+3|0|8|14019|57552|int|2                     // questUberStateGroup.desertRumorState
+3|0|8|42178|50418|bool|true                 // hubUberStateGroup.gromIntroSequencePlayed
+3|0|8|48248|7646|bool|true                  // npcsStateGroup.gromGaveWarning
+3|0|8|48248|45751|bool|true                 // npcsStateGroup.gromTalkedAboutDesert
+3|0|8|48248|54806|bool|true                 // npcsStateGroup.gromTalkedAboutWatermill
+3|0|8|48248|46471|bool|true                 // npcsStateGroup.gromTalkedAboutMouldwoodGate
+3|0|8|48248|7321|bool|true                  // npcsStateGroup.gromTalkedAboutBaur
+3|0|8|48248|30073|bool|true                 // npcsStateGroup.gromTalkedAboutLagoon
+3|0|8|14019|24683|int|4                     // questUberStateGroup.luposMapQuest
+3|0|8|48248|10337|int|2                     // npcsStateGroup.talkedInHub
+3|0|8|48248|8985|bool|true                  // npcsStateGroup.willowsEndSeirExitCutscene
+3|0|8|48248|56448|bool|true                 // npcsStateGroup.metOpherHub
+3|0|8|48248|5186|bool|true                  // npcsStateGroup.gromMentionedOre
+3|0|8|58674|58268|bool|true                 // _petrifiedForestGroup.wispCutscenePlayed
+3|0|8|3440|20131|bool|true                  // playerUberStateGroupDescriptor.playerPurchasedWeaponMasterUpgrade
+3|0|8|14019|16509|int|2                     // questUberStateGroup.wellspringShrineRumorState
+3|0|8|14019|30596|int|2                     // questUberStateGroup.gardenerHutRumorState
+3|0|8|48248|7160|bool|true                  // npcsStateGroup.desertRuinsLoreWispA
+3|0|8|48248|15833|bool|true                 // npcsStateGroup.desertRuinsLoreWispB
+3|0|8|48248|52065|bool|true                 // npcsStateGroup.desertRuinsLoreWispC
+3|0|8|48248|13320|bool|true                 // npcsStateGroup.desertRuinsLoreWispD
+3|0|8|48248|5269|bool|true                  // npcsStateGroup.desertRuinsLoreWispE
+3|0|8|14019|24683|int|5                     // questUberStateGroup.luposMapQuest
+3|0|4|17|14019|44578|0|8|14019|44578|int|1  // questUberStateGroup.rebuildGladesQuest
+// Dynamic cutscene skips
+!46462|59806|8|937|6778|bool|true           // voice door
+24|14|8|18793|25789|bool|true               // depths gate
+937|10071|8|9|0|int|2                       // ruins gate (any 4 of the 5 wisps needed to open door)
+!18793|63291|8|9|0|int|2
+!28895|25522|8|9|0|int|2
+!945|49747|8|9|0|int|2
+!10289|22102|8|9|0|int|2
+9|0=2|4|17|937|10071|1|4|17|28895|25522|1|4|17|18793|63291|1|4|17|945|49747|1|8|10289|3804|bool|true
+9|0=2|4|17|937|10071|1|4|17|28895|25522|1|4|17|18793|63291|1|4|17|10289|22102|1|8|10289|3804|bool|true
+9|0=2|4|17|937|10071|1|4|17|28895|25522|1|4|17|10289|22102|1|4|17|945|49747|1|8|10289|3804|bool|true
+9|0=2|4|17|937|10071|1|4|17|10289|22102|1|4|17|18793|63291|1|4|17|945|49747|1|8|10289|3804|bool|true
+9|0=2|4|17|10289|22102|1|4|17|28895|25522|1|4|17|18793|63291|1|4|17|945|49747|1|8|10289|3804|bool|true
+58674|61616=5|8|58674|61616|byte|6          // Seir Shriek cutscene in Feeding Grounds
+
+///Alt+P
+3|1|16|0|0|0|Progress Summary
+3|1|16|1|0|0|[Ability1]View Progress
+3|1|16|2|0|0|file:assets/icons/wheel/progress_summary.blue.png
+3|1|16|4|0|0|0|4|16|ShowProgressWithHints
+
+// Progress Message
+3|8|4|29|0|#Wisps#: <>
+3|8|4|17|46462|59806|0|4|30|0|Voice, 
+3|8|4|17|46462|59806|1|4|30|0|@Voice@, 
+3|8|4|17|28895|25522|0|4|30|0|Memory, 
+3|8|4|17|28895|25522|1|4|30|0|@Memory@, 
+3|8|4|17|18793|63291|0|4|30|0|Eyes, 
+3|8|4|17|18793|63291|1|4|30|0|@Eyes@, 
+3|8|4|17|945|49747|0|4|30|0|Strength, 
+3|8|4|17|945|49747|1|4|30|0|@Strength@, 
+3|8|4|17|10289|22102|0|4|30|0|Heart
+3|8|4|17|10289|22102|1|4|30|0|@Heart@
+3|8|4|30|0|\nPickups: $(9|32)/26
+3|8|8|9|19|int|$(5|50)
+3|8|8|9|0|int|10
+3|8|6|${0}|instant
+
+// This World: 0
+// Format Version: 1.0.0
+// Generator Version: 0.4.1-d94ecfc999eb0e16ffcbafac071ca13f6f0ee6b8
+// Slug: UnwiseJourneyV0.3.0
+// Config: {"seed":"5108871280060924","worldSettings":[{"spawn":"MarshSpawn.Main","difficulty":"Unsafe","tricks":[],"hard":false,"randomizeDoors":false,"goals":["wisps"],"headers":[],"headerConfig":[],"inlineHeaders":[]}],"disableLogicFilter":false,"online":false,"createGame":"None"}
