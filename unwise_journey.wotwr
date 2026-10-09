@@ -29,6 +29,7 @@ Flags: Plando, Unsafe, Wisps, You might want to reconsider
 3|0|8|937|54318|bool|true               // Raise eyestone platform
 14019|35087=3|8|5|10|int|20             // Fix Kwolok not giving extra health
 14019|35087=3|8|5|12|int|2              // Fix Kwolok not giving extra energy
+28895|50368|8|28895|8934|bool|true      // Remove ice wall at reach tp when collecting melting spear because you can't melt that wall
 
 /// QoL
 28895|29098=1|8|5|11|float|230          // Refill on Baur sneezing
@@ -56,13 +57,15 @@ Flags: Plando, Unsafe, Wisps, You might want to reconsider
 21786|17920|2|5                 // Double Jump     from MarshSpawn.LeverEC
 9593|26457|8|9|10|int|+1        // Eyestone        from MarshPastOpher.PoolsPathEC
 24922|32076|8|9|10|int|+1       // Eyestone        from MarshSpawn.BurrowsApproachLedgeEX
-937|61897|1|0                   // Health Cell     from WestHollow.CrusherHC
+937|61897|1|0                   // Health          from WestHollow.CrusherHC
 937|37926|5|17                  // Glades TP       from WestHollow.DashRightEX
 44310|36911|2|118               // Flap            from WestGlades.ShrineHC
 28895|50368|8|4|74|bool|true    // Melting Spear   from UpperReach.UpperKS
 28895|50368|6|#Melting Spear#   // -
-28895|53283|1|1                 // Energy          from LowerReach.RoofLeftEX
+28895|53283|1|1|mute//             Energy          from LowerReach.RoofLeftEX
 28895|53283|1|1|mute//             -
+28895|53283|6|Energy Cell
+28895|37444|1|0                 // Health          from LowerReach.MiddleLeftKS
 28895|25522|11|45               // Exploding Spear from LowerReach.ForestsMemory
 37858|12379|5|8                 // Woods Exit TP   from InnerWellspring.WaterEscape
 0|101|5|6                       // Depths TP       from LowerWastes.BurrowTree
@@ -98,23 +101,24 @@ Flags: Plando, Unsafe, Wisps, You might want to reconsider
 3|1|16|4|0|1|0|8|9|0|int|29
 3|4|8|9|0|int|29
 
-0|100|8|9|32|int|+1                      // Lift rain       from HowlsDen.SwordTree
-9593|23858|8|9|32|int|+1                 // Pools TP        from MarshSpawn.CaveOre
-21786|21727|8|9|32|int|+1                // Spear           from MarshSpawn.PoolsPathEX
-945|49747|8|9|32|int|+1                  // Regenerate      from WestPools.ForestsStrength
-21786|17920|4|17|9|10|2|8|9|32|int|+1    // Double Jump     from MarshSpawn.LeverEC
-9|10=2|4|17|21786|17920|1|8|9|32|int|+1  // Can open Kwolok statue once you collected both eyestones
-937|37926|8|9|32|int|+1                  // Glades TP       from WestHollow.DashRightEX
-44310|36911|8|9|32|int|+1                // Flap            from WestGlades.ShrineHC
-28895|53283|8|9|32|int|+1                // Energy          from LowerReach.RoofLeftEX
-28895|25522|8|9|32|int|+1                // Exploding Spear from LowerReach.ForestsMemory
-37858|12379|8|9|32|int|+1                // Woods Exit TP   from InnerWellspring.WaterEscape
-0|101|4|17|58674|29265|1|8|9|32|int|+1   // Depths TP       from LowerWastes.BurrowTree
-58674|29265|4|17|0|101|1|8|9|32|int|+1   // Magnet          from WoodsMain.CombatShrine
-18793|63291|8|9|32|int|+1                // Burrow          from UpperDepths.ForestsEyes
-16155|3588|8|9|32|int|+1                 // Hollows TP      from WillowsEnd.BurrowHeart
-10289|22102|8|9|32|int|+1                // Ancestral Light from WindtornRuins.Seir
-10289|44555|8|9|32|int|+1                // Reckless        from WindtornRuins.EscapeRevisitEC
+0|100|8|9|32|int|+1                           // Lift rain       from HowlsDen.SwordTree
+9593|23858|8|9|32|int|+1                      // Pools TP        from MarshSpawn.CaveOre
+21786|21727|8|9|32|int|+1                     // Spear           from MarshSpawn.PoolsPathEX
+945|49747|8|9|32|int|+1                       // Regenerate      from WestPools.ForestsStrength
+21786|17920|4|17|9|10|2|8|9|32|int|+1         // Double Jump     from MarshSpawn.LeverEC
+9|10=2|4|17|21786|17920|1|8|9|32|int|+1       // Can open Kwolok statue once you collected both eyestones
+937|37926|8|9|32|int|+1                       // Glades TP       from WestHollow.DashRightEX
+44310|36911|8|9|32|int|+1                     // Flap            from WestGlades.ShrineHC
+28895|53283|4|17|28895|37444|1|8|9|32|int|+1  // Energy          from LowerReach.RoofLeftEX
+28895|37444|4|17|28895|53283|1|8|9|32|int|+1  // Health          from LowerReach.MiddleLeftKS
+28895|25522|8|9|32|int|+1                     // Exploding Spear from LowerReach.ForestsMemory
+37858|12379|8|9|32|int|+1                     // Woods Exit TP   from InnerWellspring.WaterEscape
+0|101|4|17|58674|29265|1|8|9|32|int|+1        // Depths TP       from LowerWastes.BurrowTree
+58674|29265|4|17|0|101|1|8|9|32|int|+1        // Magnet          from WoodsMain.CombatShrine
+18793|63291|8|9|32|int|+1                     // Burrow          from UpperDepths.ForestsEyes
+16155|3588|8|9|32|int|+1                      // Hollows TP      from WillowsEnd.BurrowHeart
+10289|22102|8|9|32|int|+1                     // Ancestral Light from WindtornRuins.Seir
+10289|44555|8|9|32|int|+1                     // Reckless        from WindtornRuins.EscapeRevisitEC
 
 9|0=29|4|17|9|32|0|6|You should roam a bit in #Marsh#
 9|0=29|4|17|9|32|1|6|With the rain gone, #Marsh# is livier than ever!\nSurely some of your new friends can help you cleaning those branches.
@@ -406,7 +410,6 @@ Flags: Plando, Unsafe, Wisps, You might want to reconsider
 3|0|8|28895|22382|bool|true        // UpperReach.MiddleLeftKS
 3|0|8|28895|29898|bool|true        // LowerReach.RightKS
 3|0|8|28895|1053|bool|true         // UpperReach.LowerKS
-3|0|8|28895|37444|bool|true        // LowerReach.MiddleLeftKS
 3|0|8|28895|10823|bool|true        // LowerReach.UpperLeftKS
 3|0|8|28895|9949|bool|true         // UpperReach.MiddleRightKS
 3|0|8|28895|18358|bool|true        // LowerReach.BottomLeftKS
@@ -631,10 +634,39 @@ Flags: Plando, Unsafe, Wisps, You might want to reconsider
 3|8|4|17|945|49747|1|4|30|0|@Strength@, 
 3|8|4|17|10289|22102|0|4|30|0|Heart
 3|8|4|17|10289|22102|1|4|30|0|@Heart@
-3|8|4|30|0|\nPickups: $(9|32)/26
+3|8|4|30|0|\nPickups: $(9|33)/27
 3|8|8|9|19|int|$(5|50)
 3|8|8|9|0|int|10
 3|8|6|${0}|instant
+
+// Pickup count
+21786|60210|8|9|33|int|+1
+9593|5929|8|9|33|int|+1
+0|77|8|9|33|int|+1
+0|100|8|9|33|int|+1
+9593|5253|8|9|33|int|+1
+9593|23858|8|9|33|int|+1
+14019|53103|8|9|33|int|+1
+21786|21727|8|9|33|int|+1
+945|49747|8|9|33|int|+1
+21786|17920|8|9|33|int|+1
+9593|26457|8|9|33|int|+1
+24922|32076|8|9|33|int|+1
+937|61897|8|9|33|int|+1
+937|37926|8|9|33|int|+1
+44310|36911|8|9|33|int|+1
+28895|50368|8|9|33|int|+1
+28895|53283|8|9|33|int|+1
+28895|37444|8|9|33|int|+1
+28895|25522|8|9|33|int|+1
+37858|12379|8|9|33|int|+1
+0|101|8|9|33|int|+1
+58674|29265|8|9|33|int|+1
+18793|63291|8|9|33|int|+1
+36153|36521|8|9|33|int|+1
+46462|59806|8|9|33|int|+1
+10289|22102|8|9|33|int|+1
+10289|44555|8|9|33|int|+1
 
 // This World: 0
 // Format Version: 1.0.0
