@@ -15,7 +15,7 @@ Flags: Plando, Unsafe, Wisps, You might want to reconsider
 3|0|8|48248|16489|int|1                 // TP anywhere
 3|0|8|6|402|bool|true                   // Drain Regen tree
 3|0|8|5377|14488|bool|true              // EastPools.EntryLever activated from the start
-3|0|8|28895|42209|bool|true             // Baur's arena start as completed
+3|0|8|28895|42209|bool|true             // Reach's arena start as completed
 3|0|8|36153|23584|bool|true             // Weeping Ridge's elevator start as completed
 3|0|8|21786|2869|bool|true              // Marsh shrine start as completed
 3|0|8|24922|45011|bool|true             // Howls shrine start as completed
@@ -29,8 +29,17 @@ Flags: Plando, Unsafe, Wisps, You might want to reconsider
 3|0|8|937|54318|bool|true               // Raise eyestone platform
 14019|35087=3|8|5|10|int|20             // Fix Kwolok not giving extra health
 14019|35087=3|8|5|12|int|2              // Fix Kwolok not giving extra energy
+
+/// QoL
+28895|29098=1|8|5|11|float|230          // Refill on Baur sneezing
+28895|29098=1|8|5|13|float|23           // Refill on Baur sneezing
+28895|30794=1|6|Breaking this is going to be a problem...
+28895|30794=1|8|28895|30794|bool|false  // Can't break the wall of LowerReach.BreakWallEX
 28287|16339=1|8|5|11|float|230          // Refill on starting Reach escape
 28287|16339=1|8|5|13|float|23           // Refill on starting Reach escape
+18793|26713=4|8|5|11|float|230          // Refill on Mora escape
+18793|26713=4|8|5|13|float|23           // Refill on Mora escape
+
 
 /// Playthrough
 
@@ -155,7 +164,6 @@ Flags: Plando, Unsafe, Wisps, You might want to reconsider
 
 16155|47278=1|8|4|3|float|0          // Shriek makes Spear free
 16155|47278=1|6|Your Spear feels different...
-18793|26713=4|8|5|13|float|23        // Refill on Mora escape
 945|58403=3|8|9|22|int|1             // Kwolok trigger
 945|58403=6|8|9|22|int|2             // Kwolok defeated
 18793|26713=2|8|9|22|int|1           // Mora trigger
