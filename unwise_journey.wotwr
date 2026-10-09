@@ -153,6 +153,9 @@ Flags: Plando, Unsafe, Wisps, You might want to reconsider
 9|12=3|2|5|mute//                                                       Djump
 9|12=3|2|74|mute//                                                      Spear
 
+10289|19890=1|8|34543|30984|int|2      // Switch to hard when starting the escape
+9|12=3||8|34543|30984|int|1            // Switch to Normal when finishing the escape
+
 /// Wellspring escape
 
 37858|10720=1|8|34543|30984|int|2      // Switch to hard when starting the escape
