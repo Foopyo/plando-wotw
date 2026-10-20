@@ -502,6 +502,63 @@ Flags: Plando, Unsafe, Wisps, You might want to reconsider
 3|0|8|53632|41227|bool|true        // OuterWellspring.TheLostCompass
 3|0|8|14019|52747|bool|true        // MarshSpawn.TokkTabletQuest
 3|0|8|14019|27539|bool|true        // MarshSpawn.FangQI
+3|0|8|1|115|bool|true              // Opher shop
+3|0|8|1|116|bool|true
+3|0|8|1|74|bool|true
+3|0|8|1|98|bool|true
+3|0|8|1|106|bool|true
+3|0|8|1|23|bool|true
+3|0|8|1|1115|bool|true
+3|0|8|1|1074|bool|true
+3|0|8|1|105|bool|true
+3|0|8|1|1116|bool|true
+3|0|8|1|1098|bool|true
+3|0|8|1|1106|bool|true
+3|0|8|2|26|bool|true               // Twillen shop
+3|0|8|2|40|bool|true
+3|0|8|2|19|bool|true
+3|0|8|2|1|bool|true
+3|0|8|2|5|bool|true
+3|0|8|2|2|bool|true
+3|0|8|2|22|bool|true
+3|0|8|2|3|bool|true
+3|0|8|17|51230|bool|true           //Grom shop
+3|0|8|17|16825|bool|true
+3|0|8|17|18751|bool|true
+3|0|8|17|23607|bool|true
+3|0|8|17|16586|bool|true
+3|0|8|17|40448|bool|true
+3|0|8|17|15068|bool|true
+3|0|8|15|19396|bool|true           // Lupo shop
+3|0|8|15|57987|bool|true
+3|0|8|15|41666|bool|true
+3|0|8|48248|18767|bool|true        // Marsh map
+3|0|8|48248|45538|bool|true        // Burrow map
+3|0|8|48248|3638|bool|true         // Hollow map
+3|0|8|48248|1590|bool|true         // Wellspring map
+3|0|8|48248|1557|bool|true         // Pools map
+3|0|8|48248|48423|bool|true        // Depths map
+3|0|8|48248|29604|bool|true        // Reach map
+3|0|8|48248|61146|bool|true        // Wastes map
+3|0|8|48248|4045|bool|true         // Willow map
+
+
+//// Glades
+// Plant Seeds
+3|0|8|42178|33011|byte|3    // Blue Moon
+3|0|8|42178|64583|byte|3    // Sticky Grass
+3|0|8|42178|38393|byte|3    // Spring Plant
+3|0|8|42178|47651|byte|3    // Lightcatcher
+3|0|8|42178|16254|byte|3    // Sela Flowers
+3|0|8|42178|40006|byte|3    // Last Seed
+3|0|8|21|51230|bool|true    // Dwelling Repairs
+3|0|8|21|23607|bool|true    // Roofs Over Heads
+3|0|8|21|40448|bool|true    // Onwards and Upwards
+3|0|8|21|18751|bool|true    // Thorny Situation
+3|0|8|21|16586|bool|true    // Clear the Cave Entrance
+3|0|4|19|14019|33776|1|8|14019|33776|int|1  // Cave Entrance Quest
+3|0|8|6|300|bool|true       // Spawn Tuley
+
 
 /// Eyestones
 
